@@ -5,6 +5,9 @@ import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 import { TextNeon } from "./common/textneon/TextNeon";
 import azotea from "./assets/imgcity/azoteac.png";
 import estructure from "./assets/imgcity/estructura.png";
+import basecity from "./assets/imgcity/base.png";
+import city from "./assets/imgcity/medicity.png";
+import foncity from "./assets/imgcity/fondcity.jpg";
 import { SectionOne } from "./sectionone/SectionOne";
 
 const d = document.getElementById("game");
@@ -43,8 +46,15 @@ export const Main = () => {
           backgroundSize: 'cover',
         }}
       />
+        
+       <ParallaxLayer offset={-0.9} speed={-0.8} factor={3} style={{ pointerEvents: 'none' }}>
+     
+       <img src={foncity} style={{ width: '100%' }} />
 
-      <ParallaxLayer offset={0} speed={-0.3} style={{ pointerEvents: 'none' }}>
+     </ParallaxLayer>
+
+      <ParallaxLayer offset={0} speed={-0.6} style={{ pointerEvents: 'none' }}>
+     
       <SectionOne/>
 
         <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
@@ -112,14 +122,14 @@ export const Main = () => {
 
       <ParallaxLayer
         offset={0.1}
-        speed={0.1}
+        speed={-0.1}
         onClick={() => parallax.current.scrollTo(2)}
         style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-            <img src={estructure} />
+            <img src={basecity} />
         {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
       </ParallaxLayer>
 
