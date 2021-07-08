@@ -1,0 +1,38 @@
+/* .sectionOne {
+  position: absolute;
+  background-image: radial-gradient(
+    circle at 50% 120.71%,
+    #d651a6 0,
+    #b5489c 12.5%,
+    #913d8b 25%,
+    #6a2f75 37.5%,
+    #441f59 50%,
+    #220f3c 62.5%,
+    #090024 75%,
+    #00000f 87.5%,
+    #000000 100%
+  );
+  width: 100%;
+  height: 100vh;
+} */
+
+.cartel {
+  background-color: #00000050;
+  border-radius: 20px;
+  border: 1px solid #913d8b;
+  box-shadow: -0.1vw 0vw 0.2vw #a9ffdc, -0.2vw 0vw 0.25vw #a9ffdc,
+    -0.1vw 0vw 0.2vw #a9ffdc, -0.1vw 0vw 0.1vw #00cccc,
+    -0.1vw 0vw 0.1vw #00cccc, -0.1vw 0vw 0.1vw #00cccc, -0.1vw 0vw 0.3vw #00cccc,
+    -0.1vw 0vw 0.8vw #00cccc, -0.1vw 0vw 0.8vw #00cccc, 0.1vw 0vw 0.3vw #00cccc;
+  padding: 0px 2% 0px 2%;
+}
+
+.textneon {
+}
+
+.estructure {
+  width: 100vw;
+ position: relative;
+ bottom: 0px;
+ /* top: -90vh; */
+}
