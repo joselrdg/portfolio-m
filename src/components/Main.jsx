@@ -34,10 +34,10 @@ export const Main = () => {
   return (
     <div style={{ width: '100%', height: '100%', background: '#253237' }}>
     <Parallax ref={parallax} pages={3}>
-      <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} />
-      <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} />
+      {/* <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} /> */}
+      {/* <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} /> */}
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={0}
         speed={0}
         factor={3}
@@ -45,22 +45,22 @@ export const Main = () => {
           backgroundImage: url('stars', true),
           backgroundSize: 'cover',
         }}
-      />
+      /> */}
         
-       <ParallaxLayer offset={-0.9} speed={-0.8} factor={3} style={{ pointerEvents: 'none' }}>
-     
+       <ParallaxLayer offset={-0.9} speed={-0.8} factor={3} style={{ pointerEvents: 'none' }}>     
        <img src={foncity} style={{ width: '100%' }} />
-
      </ParallaxLayer>
 
-      <ParallaxLayer offset={0} speed={-0.6} style={{ pointerEvents: 'none' }}>
-     
+      <ParallaxLayer offset={0} speed={-0.6} style={{ pointerEvents: 'none' }}>     
       <SectionOne/>
-
-        <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} />
+        {/* <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} /> */}
       </ParallaxLayer>
 
-      <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
+      <ParallaxLayer offset={-0.9} speed={-0.8} factor={3} style={{ pointerEvents: 'none' }}>     
+       <img src={foncity} style={{ width: '100%' }} />
+     </ParallaxLayer>
+
+      {/* <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
         <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
         <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
       </ParallaxLayer>
@@ -84,9 +84,9 @@ export const Main = () => {
       <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
         <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
         <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-      </ParallaxLayer>
+      </ParallaxLayer> */}
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={2.5}
         speed={-0.4}
         style={{
@@ -96,9 +96,9 @@ export const Main = () => {
           pointerEvents: 'none',
         }}>
         <img src={url('earth')} style={{ width: '60%' }} />
-      </ParallaxLayer>
+      </ParallaxLayer> */}
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={2}
         speed={-0.3}
         style={{
@@ -106,9 +106,9 @@ export const Main = () => {
           backgroundPosition: 'center',
           backgroundImage: url('clients', true),
         }}
-      />
+      /> */}
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={0}
         speed={0.1}
         onClick={() => parallax.current.scrollTo(1)}
@@ -117,8 +117,8 @@ export const Main = () => {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        {/* <img src={url('server')} style={{ width: '20%' }} /> */}
-      </ParallaxLayer>
+        <img src={url('server')} style={{ width: '20%' }} />
+      </ParallaxLayer> */}
 
       <ParallaxLayer
         offset={0.1}
@@ -133,7 +133,7 @@ export const Main = () => {
         {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
       </ParallaxLayer>
 
-      <ParallaxLayer
+      {/* <ParallaxLayer
         offset={2}
         speed={-0}
         style={{
@@ -143,7 +143,7 @@ export const Main = () => {
         }}
         onClick={() => parallax.current.scrollTo(0)}>
         <img src={url('clients-main')} style={{ width: '40%' }} />
-      </ParallaxLayer>
+      </ParallaxLayer> */}
     </Parallax>
   </div>
   );
