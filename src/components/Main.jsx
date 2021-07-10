@@ -6,6 +6,7 @@ import { TextNeon } from "./common/textneon/TextNeon";
 import azotea from "./assets/imgcity/azoteac.png";
 import estructure from "./assets/imgcity/estructura.png";
 import basecity from "./assets/imgcity/base.png";
+import basecityd from "./assets/imgcity/based.png";
 import centrcity from "./assets/imgcity/centrcity.png";
 import city from "./assets/imgcity/medicity.png";
 import foncity from "./assets/imgcity/fondcity.jpg";
@@ -60,7 +61,11 @@ export const Main = () => {
           offset={0}
           speed={-0.8}
           factor={1}
-          style={{ backgroundImage: "url(fondcity.jpg)", backgroundPosition: 'center 0%', backgroundSize: "cover" }}
+          style={{
+            backgroundImage: "url(fondcity.jpg)",
+            backgroundPosition: "center 0%",
+            backgroundSize: "cover",
+          }}
         >
           {/* <img src={foncity} style={{ height: "100%" }} /> */}
         </ParallaxLayer>
@@ -84,7 +89,7 @@ export const Main = () => {
         </ParallaxLayer> */}
 
         <ParallaxLayer
-          offset={1 - 0.01}
+          offset={1 - 0.04}
           speed={0.6}
           factor={1}
           style={{ pointerEvents: "none" }}
@@ -92,34 +97,21 @@ export const Main = () => {
           <img src={fondbaseb} style={{ width: "100%" }} />
         </ParallaxLayer>
         <ParallaxLayer
-          offset={1 - 0.02}
-          speed={0.2}
+          offset={1 - 0.001}
+          speed={0.01}
           factor={1}
           style={{ pointerEvents: "none" }}
         >
           <img src={fondbasebd} style={{ width: "100%" }} />
         </ParallaxLayer>
 
-        {/* <ParallaxLayer
-          offset={1.408}
-          speed={-0.2}
-          onClick={() => parallax.current.scrollTo(2)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#00061e",
-          }}
-        >*/}
-          {/* <img src={centrcity} /> */}
-          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
-        {/* </ParallaxLayer>  */}
        
+
+
         <ParallaxLayer
-          offset={0.5}
+          offset={0.7}
           speed={-0.1}
           factor={3}
-
           onClick={() => parallax.current.scrollTo(2)}
           // style={{
           //   display: "flex",
@@ -128,10 +120,39 @@ export const Main = () => {
           // }}
           // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
         >
-          <img src={basecity}  style={{ position: 'center' }}/>
+          <img src={basecity} style={{ position: "center" }} />
           {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
         </ParallaxLayer>
-     
+
+        <ParallaxLayer
+          offset={1.- 0.1}
+          speed={0.3}
+          factor={3}
+          onClick={() => parallax.current.scrollTo(2)}
+          style={{
+            float: "right",
+          }}
+          // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
+        >
+          <img src={basecityd} style={{ position: "center" }} />
+          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={1.8}
+          speed={-0.2}
+          onClick={() => parallax.current.scrollTo(2)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#000000",
+          }}
+        >
+        {/* <img src={centrcity} /> */}
+        {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
+        </ParallaxLayer> 
+
       </Parallax>
     </div>
   );
