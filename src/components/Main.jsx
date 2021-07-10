@@ -6,8 +6,13 @@ import { TextNeon } from "./common/textneon/TextNeon";
 import azotea from "./assets/imgcity/azoteac.png";
 import estructure from "./assets/imgcity/estructura.png";
 import basecity from "./assets/imgcity/base.png";
+import centrcity from "./assets/imgcity/centrcity.png";
 import city from "./assets/imgcity/medicity.png";
 import foncity from "./assets/imgcity/fondcity.jpg";
+import fondbase from "./assets/imgcity/fondbase.png";
+import fondbaseb from "./assets/imgcity/fondbaseb.png";
+import fondbased from "./assets/imgcity/fondbased.png";
+import fondbasebd from "./assets/imgcity/fondbasebd.png";
 import { SectionOne } from "./sectionone/SectionOne";
 
 const d = document.getElementById("game");
@@ -32,12 +37,16 @@ export const Main = () => {
     console.log("hidecanvas");
   };
   return (
-    <div style={{ width: '100%', height: '100%', background: '#253237' }}>
-    <Parallax ref={parallax} pages={3}>
-      {/* <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#805E73' }} /> */}
-      {/* <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} /> */}
+    <div style={{ width: "100%", height: "100%", background: "#253237" }}>
+      <Parallax ref={parallax} pages={2}>
+        <ParallaxLayer
+          offset={1}
+          speed={1}
+          style={{ backgroundColor: "#805E73" }}
+        />
+        {/* <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} /> */}
 
-      {/* <ParallaxLayer
+        {/* <ParallaxLayer
         offset={0}
         speed={0}
         factor={3}
@@ -46,107 +55,88 @@ export const Main = () => {
           backgroundSize: 'cover',
         }}
       /> */}
-        
-       <ParallaxLayer offset={-0.9} speed={-0.8} factor={3} style={{ pointerEvents: 'none' }}>     
-       <img src={foncity} style={{ width: '100%' }} />
-     </ParallaxLayer>
 
-      <ParallaxLayer offset={0} speed={-0.6} style={{ pointerEvents: 'none' }}>     
-      <SectionOne/>
-        {/* <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} /> */}
-      </ParallaxLayer>
+        <ParallaxLayer
+          offset={0}
+          speed={-0.8}
+          factor={1}
+          style={{ backgroundImage: "url(fondcity.jpg)", backgroundPosition: 'center 0%', backgroundSize: "cover" }}
+        >
+          {/* <img src={foncity} style={{ height: "100%" }} /> */}
+        </ParallaxLayer>
 
-      <ParallaxLayer offset={-0.9} speed={-0.8} factor={3} style={{ pointerEvents: 'none' }}>     
-       <img src={foncity} style={{ width: '100%' }} />
-     </ParallaxLayer>
+        <ParallaxLayer
+          offset={0}
+          speed={-0.6}
+          style={{ pointerEvents: "none" }}
+        >
+          <SectionOne />
+          {/* <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} /> */}
+        </ParallaxLayer>
 
-      {/* <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
-        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
-        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
-      </ParallaxLayer>
+        {/* <ParallaxLayer
+          offset={0.9}
+          speed={0.6}
+          factor={3}
+          style={{ pointerEvents: "none" }}
+        >
+          <img src={fondbase} style={{ width: "100%" }} />
+        </ParallaxLayer> */}
 
-      <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
-        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
-      </ParallaxLayer>
+        <ParallaxLayer
+          offset={1 - 0.01}
+          speed={0.6}
+          factor={1}
+          style={{ pointerEvents: "none" }}
+        >
+          <img src={fondbaseb} style={{ width: "100%" }} />
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={1 - 0.02}
+          speed={0.2}
+          factor={1}
+          style={{ pointerEvents: "none" }}
+        >
+          <img src={fondbasebd} style={{ width: "100%" }} />
+        </ParallaxLayer>
 
-      <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
-        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-      </ParallaxLayer>
+        {/* <ParallaxLayer
+          offset={1.408}
+          speed={-0.2}
+          onClick={() => parallax.current.scrollTo(2)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#00061e",
+          }}
+        >*/}
+          {/* <img src={centrcity} /> */}
+          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
+        {/* </ParallaxLayer>  */}
+       
+        <ParallaxLayer
+          offset={0.5}
+          speed={-0.1}
+          factor={3}
 
-      <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
-        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
-        <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
-        <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
-      </ParallaxLayer>
-
-      <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
-        <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
-        <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
-      </ParallaxLayer> */}
-
-      {/* <ParallaxLayer
-        offset={2.5}
-        speed={-0.4}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          pointerEvents: 'none',
-        }}>
-        <img src={url('earth')} style={{ width: '60%' }} />
-      </ParallaxLayer> */}
-
-      {/* <ParallaxLayer
-        offset={2}
-        speed={-0.3}
-        style={{
-          backgroundSize: '80%',
-          backgroundPosition: 'center',
-          backgroundImage: url('clients', true),
-        }}
-      /> */}
-
-      {/* <ParallaxLayer
-        offset={0}
-        speed={0.1}
-        onClick={() => parallax.current.scrollTo(1)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <img src={url('server')} style={{ width: '20%' }} />
-      </ParallaxLayer> */}
-
-      <ParallaxLayer
-        offset={0.1}
-        speed={-0.1}
-        onClick={() => parallax.current.scrollTo(2)}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-            <img src={basecity} />
-        {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
-      </ParallaxLayer>
-
-      {/* <ParallaxLayer
-        offset={2}
-        speed={-0}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-        onClick={() => parallax.current.scrollTo(0)}>
-        <img src={url('clients-main')} style={{ width: '40%' }} />
-      </ParallaxLayer> */}
-    </Parallax>
-  </div>
+          onClick={() => parallax.current.scrollTo(2)}
+          // style={{
+          //   display: "flex",
+          //   alignItems: "center",
+          //   justifyContent: "center",
+          // }}
+          // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
+        >
+          <img src={basecity}  style={{ position: 'center' }}/>
+          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
+        </ParallaxLayer>
+     
+      </Parallax>
+    </div>
   );
 };
 
-{/* <button onClick={hidecanvas}>HideCanvas</button> */}
+{
+  /* <button onClick={hidecanvas}>HideCanvas</button> */
+}
