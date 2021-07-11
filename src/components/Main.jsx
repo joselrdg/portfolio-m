@@ -14,6 +14,8 @@ import fondbase from "./assets/imgcity/fondbase.png";
 import fondbaseb from "./assets/imgcity/fondbaseb.png";
 import fondbased from "./assets/imgcity/fondbased.png";
 import fondbasebd from "./assets/imgcity/fondbasebd.png";
+import pacm from "./assets/imgcity/pacm.png";
+import pc1 from "./assets/imgcity/pc1.png";
 import { SectionOne } from "./sectionone/SectionOne";
 
 const d = document.getElementById("game");
@@ -105,9 +107,6 @@ export const Main = () => {
           <img src={fondbasebd} style={{ width: "100%" }} />
         </ParallaxLayer>
 
-       
-
-
         <ParallaxLayer
           offset={0.7}
           speed={-0.1}
@@ -125,7 +124,7 @@ export const Main = () => {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={1.- 0.1}
+          offset={1 - 0.1}
           speed={0.3}
           factor={3}
           onClick={() => parallax.current.scrollTo(2)}
@@ -134,7 +133,7 @@ export const Main = () => {
           }}
           // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
         >
-          <img src={basecityd} style={{ position: "center" }} />
+          <img src={basecityd} />
           {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
         </ParallaxLayer>
 
@@ -149,15 +148,25 @@ export const Main = () => {
             backgroundColor: "#000000",
           }}
         >
-        {/* <img src={centrcity} /> */}
-        {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
-        </ParallaxLayer> 
-
+          {/* <img src={centrcity} /> */}
+          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
+        </ParallaxLayer>
+        <button onClick={hidecanvas}>HideCanvas</button>
+        <ParallaxLayer
+          offset={1.8}
+          speed={0.3}
+          factor={3}
+          onClick={() => parallax.current.scrollTo(2)}
+        
+          // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
+        >
+          <img src={pc1}   style={{
+            display: "block",
+            margin: "auto",
+          }}/>
+          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
+        </ParallaxLayer>
       </Parallax>
     </div>
   );
 };
-
-{
-  /* <button onClick={hidecanvas}>HideCanvas</button> */
-}
