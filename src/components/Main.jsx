@@ -17,7 +17,7 @@ import fondbasebd from "./assets/imgcity/fondbasebd.png";
 import pacm from "./assets/imgcity/pacm.png";
 import pc1 from "./assets/imgcity/pc1.png";
 import { SectionOne } from "./sectionone/SectionOne";
-import { Neon } from "./sectionone/Neon";
+import { SectionTwo } from "./sectionone/SectionTwo";
 
 const d = document.getElementById("game");
 
@@ -42,7 +42,7 @@ export const Main = () => {
   };
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={2}>
+      <Parallax ref={parallax} pages={3}>
         <ParallaxLayer
           offset={1}
           speed={1}
@@ -135,7 +135,6 @@ export const Main = () => {
           // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
         >
           <img src={basecityd} />
-          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -152,23 +151,46 @@ export const Main = () => {
           {/* <img src={centrcity} /> */}
           {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
         </ParallaxLayer>
-        <button onClick={hidecanvas}>HideCanvas</button>
-        <ParallaxLayer
-          offset={1.4}
-          speed={0.3}
-          factor={3}
-          onClick={() => parallax.current.scrollTo(2)}
-        
-          // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
-        >
-          {/* <img src={pc1}   style={{
-            display: "block",
-            margin: "auto",
-          }}/> */}
-          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
-          <Neon title='404'/>
+
+        <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
         </ParallaxLayer>
-      </Parallax>
+
+        <ParallaxLayer offset={1.75} speed={0.5} style={{ opacity: 0.1 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1} speed={0.2} style={{ opacity: 0.2 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={1.6}
+          speed={0.1}
+          onClick={() => parallax.current.scrollTo(2)}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+        <SectionTwo/>
+        </ParallaxLayer>
+
+      </Parallax> 
     </div>
   );
 };
