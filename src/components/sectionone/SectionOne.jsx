@@ -17,6 +17,7 @@ export const SectionOne = () => {
         <div className="cartel __flex __fd-col __ai-center __jc-center">
           <TextNeon
             className="textneon"
+            // animation
             text="Front-End"
             font="clipneon"
             size={10}

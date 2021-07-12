@@ -17,6 +17,7 @@ import fondbasebd from "./assets/imgcity/fondbasebd.png";
 import pacm from "./assets/imgcity/pacm.png";
 import pc1 from "./assets/imgcity/pc1.png";
 import { SectionOne } from "./sectionone/SectionOne";
+import { Neon } from "./sectionone/Neon";
 
 const d = document.getElementById("game");
 
@@ -153,18 +154,19 @@ export const Main = () => {
         </ParallaxLayer>
         <button onClick={hidecanvas}>HideCanvas</button>
         <ParallaxLayer
-          offset={1.8}
+          offset={1.4}
           speed={0.3}
           factor={3}
           onClick={() => parallax.current.scrollTo(2)}
         
           // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
         >
-          <img src={pc1}   style={{
+          {/* <img src={pc1}   style={{
             display: "block",
             margin: "auto",
-          }}/>
+          }}/> */}
           {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
+          <Neon title='404'/>
         </ParallaxLayer>
       </Parallax>
     </div>
