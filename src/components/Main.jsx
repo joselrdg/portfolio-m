@@ -135,7 +135,7 @@ export const Main = () => {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={1 - 0.1}
+          offset={1 - 0.01}
           speed={0.3}
           factor={3}
           onClick={() => parallax.current.scrollTo(2)}
