@@ -18,7 +18,7 @@ import pacm from "./assets/imgcity/pacm.png";
 import pc1 from "./assets/imgcity/pc1.png";
 import { SectionOne } from "./sectionone/SectionOne";
 import { SectionTwo } from "./sectionone/SectionTwo";
-import { Eyes } from "./common/Eyes/Eyes";
+// import { Eyes } from "./common/Eyes/Eyes";
 
 const d = document.getElementById("game");
 
@@ -32,18 +32,27 @@ const url = (name, wrap = false) =>
 
 // Fonts: lasenter  clipneon  moon
 
+
+
 export const Main = () => {
   useEffect(() => {
     d.style.display = d.style.display == "none" ? "block" : "none";
   }, []);
+
+
+
   const parallax = useRef();
+
   const hidecanvas = () => {
     d.style.display = d.style.display == "none" ? "block" : "none";
     console.log("hidecanvas");
   };
+
+
+
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={3}>
+   <Parallax ref={parallax} pages={3}>
         <ParallaxLayer
           offset={1}
           speed={1}
@@ -153,8 +162,7 @@ export const Main = () => {
           {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
         </ParallaxLayer>
         
-        <Eyes />
-
+{/* 
         <ParallaxLayer
           offset={1.6}
           speed={0.1}
@@ -165,8 +173,8 @@ export const Main = () => {
             justifyContent: "center",
           }}
         >
+        </ParallaxLayer> */}
           <SectionTwo />
-        </ParallaxLayer>
       </Parallax>
     </div>
   );
