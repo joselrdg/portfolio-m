@@ -86,6 +86,9 @@ export const Head = () => {
           setStateSeconds({ seconds: 0 });
         }
       } else if (stateAnimation.animation === 1) {
+        if (stateSeconds.seconds > 22){
+          setStateSeconds({ seconds: 22})
+        }
         if (refEyes.current <= 21) {
           setStateSeconds({ seconds: stateSeconds.seconds++ });
         } else if (refEyes.current >= 22) {
