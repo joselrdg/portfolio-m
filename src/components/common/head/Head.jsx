@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Head.css";
-
+import head0 from "../../assets/head/1.png";
 import head1 from "../../assets/head/23.png";
 import head2 from "../../assets/head/24.png";
 import head3 from "../../assets/head/25.png";
@@ -45,10 +45,12 @@ const imgsHead = [
   head19,
   head20,
   head21,
+  head0,
 ];
 
 export const Head = () => {
   const refEyes = useRef(0);
+  const refAnimation = useRef(false);
   const [stateSeconds, setStateSeconds] = useState({
     seconds: 0,
   });
@@ -58,7 +60,23 @@ export const Head = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       refEyes.current = refEyes.current + 1;
+      console.log(
+        "refEyes",
+        refEyes.current,
+        "refAnimation",
+        refAnimation.current
+      );
+      console.log(
+        "stateSeconds",
+        stateSeconds.seconds,
+        "stateAnimation",
+        stateAnimation.animation
+      );
+      console.log("-----------------------------------");
       if (stateAnimation.animation === 0) {
+        if (stateSeconds.seconds < 0){
+          setStateSeconds({ seconds: 0})
+        }
         if (refEyes.current < 6) {
           setStateSeconds({ seconds: stateSeconds.seconds++ });
         } else if (refEyes.current > 7 && refEyes.current < 13) {
@@ -66,10 +84,23 @@ export const Head = () => {
         } else if (refEyes.current > 38) {
           refEyes.current = 0;
           setStateSeconds({ seconds: 0 });
-          //   setStateAnimation({ animation: 0 });
-          //   clearInterval(interval);
         }
-        console.log(stateSeconds.seconds);
+      } else if (stateAnimation.animation === 1) {
+        if (refEyes.current <= 21) {
+          setStateSeconds({ seconds: stateSeconds.seconds++ });
+        } else if (refEyes.current >= 22) {
+          refEyes.current = 22;
+          // setStateSeconds({ seconds: 0 });
+          // setStateAnimation({ animation: 2 });
+        }
+      } else if (stateAnimation.animation === 2) {
+        if (refEyes.current <= 23 && stateSeconds.seconds >= 0) {
+          setStateSeconds({ seconds: stateSeconds.seconds-- });
+        } else if (stateSeconds.seconds < 2) {
+          refAnimation.current = 1;
+          refEyes.current = 0;
+          setStateAnimation({ animation: 0 });
+        }
       }
     }, 100);
     return () => clearInterval(interval);
@@ -77,10 +108,20 @@ export const Head = () => {
 
   const onMouseEnter = () => {
     console.log("onMouseEnter");
+    if (stateAnimation.animation === 0) {
+      refAnimation.current = 0;
+      refEyes.current = 0;
+      setStateAnimation({ animation: 1 });
+    }
   };
 
   const onMouseLeave = () => {
     console.log("onMouseLeave");
+    if (stateAnimation.animation === 1) {
+      refAnimation.current = 0;
+      refEyes.current = 0;
+      setStateAnimation({ animation: 2 });
+    }
   };
 
   return (

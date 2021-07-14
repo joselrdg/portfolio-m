@@ -11,7 +11,7 @@ function randomInt(min, max) {
   return Math.floor((Math.random() * (max - min + 1)) + min);
 }
 
-export const EyesInterval = ({ numero = 60 }) => {
+export const EyesInterval = ({ numero = 6 }) => {
   const refContador = useRef(0);
   const [contador, setContador] = useState({ contador: 0 });
   const [stateComponents, setStateComponent] = useState({
@@ -25,7 +25,9 @@ export const EyesInterval = ({ numero = 60 }) => {
       if (refContador.current < numero) {
         refContador.current = refContador.current + 1;
         setStateComponent({
-          component: [...stateComponents.component, component()],
+          component: [
+            ...stateComponents.component, 
+            component()],
         });
       } else {
         clearInterval(interval);
@@ -40,7 +42,7 @@ export const EyesInterval = ({ numero = 60 }) => {
      opacity={getRndDec(0.1, 1)}
      speed={getRndDec(0.1, 0.8)}
      width={randomInt(1, 6)} 
-     marginLeft={`${randomInt(1, 99)}%`}
+     marginLeft={`${randomInt(1, 95)}%`}
      />;
   };
   return (
