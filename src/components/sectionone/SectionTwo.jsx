@@ -3,6 +3,7 @@ import "./SectionTwo.css";
 import { ParallaxLayer } from "@react-spring/parallax";
 import { EyesInterval } from "../common/Eyes/EyesInterval";
 import { MirrorText } from "../common/MirrorText/MirrorText";
+import { Head } from "../common/head/Head";
 
 export const SectionTwo = () => {
   return (
@@ -34,6 +35,8 @@ export const SectionTwo = () => {
             <a>Let's talk.</a>
           </div> */}
 
+          <Head />
+
           <div className="title titleMirror">
             <h1>LOOKING FOR A</h1>
             <h1>WEB DEVELOPER?</h1>
@@ -41,7 +44,7 @@ export const SectionTwo = () => {
           <div className="subtitle">
             <h3>Hey, I'm José Luis Rodríguez ; )</h3>
             <h3>
-              and I'm a web developer and programmer living in Madrid, España.
+              I'm a web developer and programmer living in Madrid, España.
             </h3>
             <h3>Inovation is my passion.</h3>
             <a>Let's talk.</a>

@@ -5,13 +5,6 @@ import ojo2 from "../../assets/ojos/1/2.png";
 import ojo3 from "../../assets/ojos/1/3.png";
 import ojo4 from "../../assets/ojos/1/4.png";
 
-const url = (name, wrap = false) =>
-  `${
-    wrap ? "url(" : ""
-  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
-  }`;
-const ojos = 4;
 
 const arrEyes = [
   ojo1,
@@ -27,7 +20,7 @@ export const Eyes = ({
   width = 1,
   marginLeft = "70%",
 }) => {
-  const ref = useRef(0)
+  const refEyes = useRef(0)
   const [stateSeconds, setStateSeconds] = useState({
     seconds: 0,
   });
@@ -37,13 +30,13 @@ export const Eyes = ({
 
   useEffect(() => {
      const interval = setInterval(() => {
-      ref.current = ref.current + 1;
+      refEyes.current = refEyes.current + 1;
       if (stateSeconds.seconds < 4) {
         setStateSeconds({ seconds: stateSeconds.seconds++ });
-      } else if (ref.current > 30 ) {
+      } else if (refEyes.current > 30 ) {
         setStateSeconds({ seconds: 0});
         setStateAnimation({ animation: 0 });
-        ref.current = 0;
+        refEyes.current = 0;
         clearInterval(interval);
       }
     }, 100);
