@@ -11,14 +11,16 @@ export const SectionTwo = () => {
       <EyesInterval />
 
       <ParallaxLayer
-        offset={1.6}
+        offset={2}
         speed={0.1}
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+        style={
+          {
+            // display: "flex",
+            // flexDirection: "row",
+            // alignItems: "center",
+            // justifyContent: "center",
+          }
+        }
       >
         <div className="contain-section-two">
           {/* <div className="title">
@@ -40,12 +42,9 @@ export const SectionTwo = () => {
           <div className="title titleMirror">
             <h1>LOOKING FOR A</h1>
             <h1>WEB DEVELOPER?</h1>
-          </div>
-          <div className="subtitle">
             <h3>Hey, I'm José Luis Rodríguez ; )</h3>
-            <h3>
-              I'm a web developer and programmer living in Madrid, España.
-            </h3>
+            <h3>I'm a web developer and programmer</h3>
+            <h3>Living in Madrid, España.</h3>
             <h3>Inovation is my passion.</h3>
             <a>Let's talk.</a>
           </div>

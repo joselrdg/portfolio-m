@@ -15,7 +15,7 @@ export const EyesInterval = ({ numero = 6 }) => {
   const refContador = useRef(0);
   const [contador, setContador] = useState({ contador: 0 });
   const [stateComponents, setStateComponent] = useState({
-    component: [[<Eyes />]],
+    component: [[<Eyes />]]
   });
 
   let arrComponents = [<Eyes />];
@@ -25,16 +25,14 @@ export const EyesInterval = ({ numero = 6 }) => {
       if (refContador.current < numero) {
         refContador.current = refContador.current + 1;
         setStateComponent({
-          component: [
-            ...stateComponents.component, 
-            component()],
+          component: [...stateComponents.component, component()],
         });
       } else {
         clearInterval(interval);
       }
-    }, 1000);
+    }, 4000);
     return () => clearInterval(interval);
-  }, [stateComponents]);
+  }, [stateComponents, numero]);
 
   const component = () => {
     return <Eyes 
@@ -42,7 +40,7 @@ export const EyesInterval = ({ numero = 6 }) => {
      opacity={getRndDec(0.1, 1)}
      speed={getRndDec(0.1, 0.8)}
      width={randomInt(1, 6)} 
-     marginLeft={`${randomInt(1, 95)}%`}
+     marginLeft={`${randomInt(1, 92)}%`}
      />;
   };
   return (

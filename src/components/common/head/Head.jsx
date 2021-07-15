@@ -60,22 +60,9 @@ export const Head = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       refEyes.current = refEyes.current + 1;
-      console.log(
-        "refEyes",
-        refEyes.current,
-        "refAnimation",
-        refAnimation.current
-      );
-      console.log(
-        "stateSeconds",
-        stateSeconds.seconds,
-        "stateAnimation",
-        stateAnimation.animation
-      );
-      console.log("-----------------------------------");
       if (stateAnimation.animation === 0) {
-        if (stateSeconds.seconds < 0){
-          setStateSeconds({ seconds: 0})
+        if (stateSeconds.seconds < 0) {
+          setStateSeconds({ seconds: 0 });
         }
         if (refEyes.current < 6) {
           setStateSeconds({ seconds: stateSeconds.seconds++ });
@@ -86,15 +73,17 @@ export const Head = () => {
           setStateSeconds({ seconds: 0 });
         }
       } else if (stateAnimation.animation === 1) {
-        if (stateSeconds.seconds > 22){
-          setStateSeconds({ seconds: 22})
-        }
-        if (refEyes.current <= 21) {
-          setStateSeconds({ seconds: stateSeconds.seconds++ });
-        } else if (refEyes.current >= 22) {
-          refEyes.current = 22;
-          // setStateSeconds({ seconds: 0 });
-          // setStateAnimation({ animation: 2 });
+        if (refEyes.current !== stateSeconds.seconds) {
+          setStateSeconds({ seconds: refEyes.current });
+        } else {
+          if (refEyes.current <= 21) {
+            setStateSeconds({ seconds: stateSeconds.seconds++ });
+          } else if (stateSeconds.seconds === 22) {
+            refEyes.current = 22;
+            clearInterval(interval);
+            // setStateSeconds({ seconds: 0 });
+            // setStateAnimation({ animation: 2 });
+          }
         }
       } else if (stateAnimation.animation === 2) {
         if (refEyes.current <= 23 && stateSeconds.seconds >= 0) {
@@ -110,7 +99,6 @@ export const Head = () => {
   }, [stateAnimation]);
 
   const onMouseEnter = () => {
-    console.log("onMouseEnter");
     if (stateAnimation.animation === 0) {
       refAnimation.current = 0;
       refEyes.current = 0;
@@ -119,7 +107,6 @@ export const Head = () => {
   };
 
   const onMouseLeave = () => {
-    console.log("onMouseLeave");
     if (stateAnimation.animation === 1) {
       refAnimation.current = 0;
       refEyes.current = 0;
@@ -133,6 +120,7 @@ export const Head = () => {
       onMouseLeave={() => onMouseLeave(false)}
       src={imgsHead[stateSeconds.seconds]}
       alt="head"
+      style={{width: 'auto'}}
     />
   );
 };
