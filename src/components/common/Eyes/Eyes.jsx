@@ -14,11 +14,11 @@ const arrEyes = [
 ];
 
 export const Eyes = ({
-  offset = 2.2,
-  opacity = 1,
+  offset = 2,
+  opacity = 0.5,
   speed = 0.5,
-  width = 1,
-  marginLeft = "70%",
+  width = 3,
+  marginLeft = "10%",
 }) => {
   const refEyes = useRef(0)
   const [stateSeconds, setStateSeconds] = useState({

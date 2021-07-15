@@ -1,5 +1,5 @@
 import "./Main.css";
-import React, { useEffect, useRef } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
 
 import { TextNeon } from "./common/textneon/TextNeon";
@@ -18,45 +18,32 @@ import pacm from "./assets/imgcity/pacm.png";
 import pc1 from "./assets/imgcity/pc1.png";
 import { SectionOne } from "./sectionone/SectionOne";
 import { SectionTwo } from "./sectionone/SectionTwo";
+import { SectionThree } from "./sectionone/SectionThree";
 // import { Eyes } from "./common/Eyes/Eyes";
 
 const d = document.getElementById("game");
 
-// Little helpers ...
-const url = (name, wrap = false) =>
-  `${
-    wrap ? "url(" : ""
-  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
-  }`;
-
 // Fonts: lasenter  clipneon  moon
 
-
-
 export const Main = () => {
+  const parallax = useRef();
+
   useEffect(() => {
     d.style.display = d.style.display == "none" ? "block" : "none";
   }, []);
-
-
-
-  const parallax = useRef();
 
   const hidecanvas = () => {
     d.style.display = d.style.display == "none" ? "block" : "none";
     console.log("hidecanvas");
   };
 
-
-
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-   <Parallax ref={parallax} pages={3}>
+      <Parallax ref={parallax} pages={4}>
         <ParallaxLayer
           offset={1}
           speed={1}
-          style={{ backgroundColor: "#805E73" }}
+          style={{ backgroundColor: "#000000" }}
         />
         {/* <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} /> */}
 
@@ -89,6 +76,7 @@ export const Main = () => {
           style={{ pointerEvents: "none" }}
         >
           <SectionOne />
+
           {/* <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} /> */}
         </ParallaxLayer>
 
@@ -97,7 +85,7 @@ export const Main = () => {
           speed={0.6}
           factor={3}
           style={{ pointerEvents: "none" }}
-        >
+          >
           <img src={fondbase} style={{ width: "100%" }} />
         </ParallaxLayer> */}
 
@@ -161,20 +149,21 @@ export const Main = () => {
           {/* <img src={centrcity} /> */}
           {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
         </ParallaxLayer>
-        
-{/* 
+
+        {/* 
         <ParallaxLayer
-          offset={1.6}
-          speed={0.1}
-          onClick={() => parallax.current.scrollTo(2)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+        offset={1.6}
+        speed={0.1}
+        onClick={() => parallax.current.scrollTo(2)}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           }}
-        >
+          >
         </ParallaxLayer> */}
-          <SectionTwo />
+        <SectionTwo />
+        <SectionThree />
       </Parallax>
     </div>
   );

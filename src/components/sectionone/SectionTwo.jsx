@@ -36,16 +36,20 @@ export const SectionTwo = () => {
             <MirrorText text="Inovation is my passion." size={2} />
             <a>Let's talk.</a>
           </div> */}
-
           <Head />
 
           <div className="title titleMirror">
-            <h1>LOOKING FOR A</h1>
-            <h1>WEB DEVELOPER?</h1>
-            <h3>Hey, I'm José Luis Rodríguez ; )</h3>
-            <h3>I'm a web developer and programmer</h3>
-            <h3>Living in Madrid, España.</h3>
-            <h3>Inovation is my passion.</h3>
+            <h1 className="bkg-text-stwo">LOOKING FOR A</h1>
+            <h1 className="bkg-text-stwo">WEB DEVELOPER?</h1>
+            <h3 className="bkg-text-stwo">Hey, I'm José Luis Rodríguez ; )</h3>
+            <h3 className="bkg-text-stwo">
+              I'm a web developer and programmer living in Madrid, España.
+            </h3>
+            <h3 className="bkg-text-stwo">
+              Do you need HTML, CSS, jQuery, React, Angular, performance,
+              animation, responsive... or just need help with UX & UI on your
+              Web or App?
+            </h3>
             <a>Let's talk.</a>
           </div>
         </div>

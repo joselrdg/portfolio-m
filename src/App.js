@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, { Suspense } from "react";
 import { Main } from './components/Main'
 import { SectionTwo } from './components/sectionone/SectionTwo';
 
@@ -7,10 +7,13 @@ import { SectionTwo } from './components/sectionone/SectionTwo';
 
 function App() {
   return (
-  <div>
-    <Main/>
-    {/* <SectionTwo/> */}
-  </div>
+    <div>
+      <Suspense fallback={<h1>Loading SectionOne...</h1>}>
+        <Main />
+      </Suspense>
+
+      {/* <SectionTwo/> */}
+    </div>
   );
 }
 

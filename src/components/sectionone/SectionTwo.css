@@ -22,14 +22,19 @@
   /* position: relative; */
   /* font-family: 'Montserrat', Arial, sans-serif; */
   /* font-size: calc(20px + 5vw); */
+  max-width: 20vw;
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.02em;
   text-shadow: 0 0 0.15em #1da9cc;
   user-select: none;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   filter: blur(0.007em);
   animation: shake 0.5s linear forwards;
+}
+
+.bkg-text-stwo {
+background-color: black;
 }
 
 .titleMirror:hover {
