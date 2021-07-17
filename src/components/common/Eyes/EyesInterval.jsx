@@ -12,19 +12,28 @@ function randomInt(min, max) {
 }
 
 const component = () => {
-  return (
-    <Eyes
+  let arr = [];
+  const numR = randomInt(4, 12)
+  for (let index = 0; index < numR; index++) {
+    const width = randomInt(1, 6)
+    arr.push(
+      ( <Eyes
       // numero={n}
       offset={getRndDec(2, 2.6)}
-      opacity={getRndDec(0.1, 1)}
+      opacity={getRndDec(width > 3 ? 0.5 : 0.1, width > 3 ? 1 : 0.5)}
       speed={getRndDec(0.1, 0.8)}
-      width={randomInt(1, 6)}
+      width={width}
       marginLeft={`${randomInt(1, 92)}%`}
-    />
+    />)
+    )
+    
+  }
+  return (
+   arr
   );
 };
 
-export const EyesInterval = ({ numero = 4 }) => {
+export const EyesInterval = ({ numero = 1 }) => {
   const refContador = useRef(0);
   const [contador, setContador] = useState({ contador: 0 });
   const [stateComponents, setStateComponent] = useState({
@@ -39,7 +48,7 @@ export const EyesInterval = ({ numero = 4 }) => {
           component: [...stateComponents.component, component()],
         });
       } else {
-        if (refContador.current < numero + 1) {
+        if (refContador.current <= numero ) {
           refContador.current = refContador.current + 1;
         } else {
           refContador.current = 0;
@@ -50,7 +59,7 @@ export const EyesInterval = ({ numero = 4 }) => {
       }
       console.log(stateComponents.component)
 
-    }, 4000);
+    }, 2500);
     return () => clearInterval(interval);
   }, [stateComponents, numero]);
 
