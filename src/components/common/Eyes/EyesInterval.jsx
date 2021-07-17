@@ -8,17 +8,28 @@ function getRndDec(min, max) {
 }
 
 function randomInt(min, max) {
-  return Math.floor((Math.random() * (max - min + 1)) + min);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export const EyesInterval = ({ numero = 60 }) => {
+const component = () => {
+  return (
+    <Eyes
+      // numero={n}
+      offset={getRndDec(2, 2.6)}
+      opacity={getRndDec(0.1, 1)}
+      speed={getRndDec(0.1, 0.8)}
+      width={randomInt(1, 6)}
+      marginLeft={`${randomInt(1, 92)}%`}
+    />
+  );
+};
+
+export const EyesInterval = ({ numero = 4 }) => {
   const refContador = useRef(0);
   const [contador, setContador] = useState({ contador: 0 });
   const [stateComponents, setStateComponent] = useState({
-    component: [[<Eyes />]]
+    component: [component()],
   });
-
-  let arrComponents = [<Eyes />];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -28,25 +39,25 @@ export const EyesInterval = ({ numero = 60 }) => {
           component: [...stateComponents.component, component()],
         });
       } else {
-        clearInterval(interval);
+        if (refContador.current < numero + 1) {
+          refContador.current = refContador.current + 1;
+        } else {
+          refContador.current = 0;
+           setStateComponent({
+          component: [component()]
+        });
+        }
       }
+      console.log(stateComponents.component)
+
     }, 4000);
     return () => clearInterval(interval);
   }, [stateComponents, numero]);
 
-  const component = () => {
-    return <Eyes 
-    offset={getRndDec(2, 2.6)}
-     opacity={getRndDec(0.1, 1)}
-     speed={getRndDec(0.1, 0.8)}
-     width={randomInt(1, 6)} 
-     marginLeft={`${randomInt(1, 92)}%`}
-     />;
-  };
   return (
     <>
-      {stateComponents.component.map((component) => (
-        <div>{component}</div>
+      {stateComponents.component.map((component, i) => (
+        <div key={i}>{component}</div>
       ))}
     </>
   );

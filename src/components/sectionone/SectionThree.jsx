@@ -3,12 +3,23 @@ import React, { useEffect, useState } from "react";
 import "./SectionThree.css";
 import { PROJECTS } from "./PROJECTS";
 
+
+const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
+
+
 export const SectionThree = ({ parallax }) => {
   const [state, setstate] = useState(parallax);
 
   useEffect(() => {
-    console.log(PROJECTS);
-  }, [parallax]);
+  }, []);
+
+
+  const onMouseEnter = () => {
+    console.log('onMouseEnter');
+  } 
+  const onMouseLeave = () => {
+    console.log('onMouseLeave');
+  }
   return (
     <>
       <ParallaxLayer
@@ -30,12 +41,12 @@ export const SectionThree = ({ parallax }) => {
           <h1 className="titleMirror proyectsTitle">Demos</h1>
           </div>
           <div className="card-proyects-items">
-            {PROJECTS.map((item) => {
+            {PROJECTS.map((item, i) => {
               return (
-                <div>
+                <div key={i}>
                   <img
-                    // onMouseEnter={() => onMouseEnter(true)}
-                    // onMouseLeave={() => onMouseLeave(false)}
+                    onMouseEnter={() => onMouseEnter(true)}
+                    onMouseLeave={() => onMouseLeave(false)}
                     src={item.image}
                     alt="head"
                     style={{ width: "100px" }}
