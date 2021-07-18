@@ -38,7 +38,7 @@ export const SectionTwo = () => {
           </div> */}
           <Head />
 
-          <div className="title titleMirror">
+          <div className="title titleMirror gradient-border">
             <h1 className="bkg-text-stwo">LOOKING FOR A</h1>
             <h1 className="bkg-text-stwo">WEB DEVELOPER?</h1>
             <h3 className="bkg-text-stwo">Hey, I'm José Luis Rodríguez ; )</h3>

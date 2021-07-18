@@ -57,8 +57,6 @@ export const EyesInterval = ({ numero = 1 }) => {
         });
         }
       }
-      console.log(stateComponents.component)
-
     }, 2500);
     return () => clearInterval(interval);
   }, [stateComponents, numero]);

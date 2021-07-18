@@ -43,13 +43,17 @@ export const SectionThree = ({ parallax }) => {
             {PROJECTS.map((item, i) => {
               return (
                 <div className="card-proyects-item" key={i}>
-                  <img
-                    onMouseEnter={() => onMouseEnter(true)}
-                    onMouseLeave={() => onMouseLeave(false)}
-                    src={item.image}
-                    alt="head"
-                    style={{ width: "100px" }}
-                  />
+                  <div className="card-proyects-img-container">
+                    <img
+                      className="card-proyects-img"
+                      onMouseEnter={() => onMouseEnter(true)}
+                      onMouseLeave={() => onMouseLeave(false)}
+                      src={item.image}
+                      alt="head"
+                      style={{ width: "100px" }}
+                    />
+                  </div>
+
                   <div>
                     <h2 className="titleMirror">{item.title}</h2>
                     <p className="titleMirror">{item.subtitle}</p>
