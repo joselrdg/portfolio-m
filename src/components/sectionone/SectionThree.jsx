@@ -12,12 +12,10 @@ import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
 export const SectionThree = ({ parallax }) => {
-  const [state, setstate] = useState(parallax);
+  // const [state, setstate] = useState(parallax);
 
-  const [isDisabled, setDisabled] = useState(true);
-
-  const handleToggleGlitch = () => {
-    setDisabled(!isDisabled);
+  const pageItem = () => {
+    console.log('pageItem')
   };
 
   useEffect(() => {}, []);
@@ -72,12 +70,10 @@ export const SectionThree = ({ parallax }) => {
           <div className="card-proyects-items">
             {PROJECTS.map((item, i) => {
               return (
-                <div className="card-proyects-item" key={i}>
+                <div className="card-proyects-item" key={i} onClick={pageItem}>
                   <div className="card-proyects-img-container">
                     <img
                       className="card-proyects-img"
-                      onMouseEnter={() => onMouseEnter(true)}
-                      onMouseLeave={() => onMouseLeave(false)}
                       src={item.image}
                       alt="head"
                       style={{ width: "100px" }}
