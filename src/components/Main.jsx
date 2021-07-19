@@ -1,6 +1,7 @@
 import "./Main.css";
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import React, { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import { useSpring, animated as a, interpolate } from 'react-spring'
 
 import { TextNeon } from "./common/textneon/TextNeon";
 import azotea from "./assets/imgcity/azoteac.png";
@@ -26,19 +27,25 @@ const d = document.getElementById("game");
 // Fonts: lasenter  clipneon  moon
 
 export const Main = () => {
+  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }))
   const parallax = useRef();
+  
 
   useEffect(() => {
     d.style.display = d.style.display == "none" ? "block" : "none";
   }, []);
 
+  const onMove = useCallback(({ clientX: x, clientY: y }) => set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }), [])
+  const onScroll = useCallback(e => set({ st: e.target.scrollTop / 30 }), [])
+
   const hidecanvas = () => {
     d.style.display = d.style.display == "none" ? "block" : "none";
     console.log("hidecanvas");
   };
-
+console.log(st)
+console.log(xy)
   return (
-    <div style={{ width: "100%", height: "100%", background: "#253237" }}>
+    <div style={{ width: "100%", height: "100%", background: "#253237" }}  onMouseMove={onMove} onScroll={onScroll}>
       <Parallax ref={parallax} pages={4}>
         <ParallaxLayer
           offset={1}

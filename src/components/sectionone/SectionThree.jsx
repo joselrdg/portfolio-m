@@ -2,14 +2,23 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useEffect, useState } from "react";
 import "./SectionThree.css";
 import { PROJECTS } from "./PROJECTS";
+import { CardPage } from "../common/cardpage/CardPage";
 import githubmark from "../assets/githubmark/GitHubLight32px.png";
 import demomark from "../assets/githubmark/demo.jpg";
 import playmark from "../assets/githubmark/play.png";
+import GlitchClip from "react-glitch-effect/core/GlitchClip";
+import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
 export const SectionThree = ({ parallax }) => {
   const [state, setstate] = useState(parallax);
+
+  const [isDisabled, setDisabled] = useState(true);
+
+  const handleToggleGlitch = () => {
+    setDisabled(!isDisabled);
+  };
 
   useEffect(() => {}, []);
 
@@ -35,9 +44,30 @@ export const SectionThree = ({ parallax }) => {
       >
         <div className="card-proyects-container">
           <div>
-            <h1 className="titleMirror proyectsTitle">Proyects</h1>
-            <h1 className="titleMirror proyectsTitle">&</h1>
-            <h1 className="titleMirror proyectsTitle">Demos</h1>
+            <GlitchSquiggly onHover={true}>
+              <h1
+                className="titleMirror proyectsTitle"
+                style={{ margin: 0, padding: 0 }}
+              >
+                Proyects
+              </h1>
+            </GlitchSquiggly>
+            <GlitchSquiggly onHover={true}>
+              <h1
+                className="titleMirror proyectsTitle "
+                style={{ margin: 0, padding: 0 }}
+              >
+                &
+              </h1>
+            </GlitchSquiggly>
+            <GlitchSquiggly onHover={true}>
+              <h1
+                className="titleMirror proyectsTitle "
+                style={{ margin: 0, padding: 0 }}
+              >
+                Demos
+              </h1>
+            </GlitchSquiggly>
           </div>
           <div className="card-proyects-items">
             {PROJECTS.map((item, i) => {
@@ -55,13 +85,23 @@ export const SectionThree = ({ parallax }) => {
                   </div>
 
                   <div>
-                    <h2 className="titleMirror">{item.title}</h2>
-                    <p className="titleMirror">{item.subtitle}</p>
+                    <GlitchSquiggly onHover={true}>
+                      <h2
+                        className="titleMirror"
+                        style={{ marginBottom: 0, padding: 0 }}
+                      >
+                        {item.title}
+                      </h2>
+                    </GlitchSquiggly>
+
+                    <GlitchClip onHover={true}>
+                      <p className="titleMirror" style={{ margin: 0, padding: 0 }}>{item.subtitle}</p>
+                    </GlitchClip>
                   </div>
                   <div className="card-proyects-a">
                     <a href={item.github} rel="noreferrer" target="_blank">
                       <img
-                        className="titleMirror mark"
+                        className="titleMirror mark shake"
                         src={githubmark}
                         alt="githubmark"
                       />
@@ -72,7 +112,7 @@ export const SectionThree = ({ parallax }) => {
                     {item.title === "GO TO HELL WITH...CANVAS!!!" ? (
                       <a href={item.demo} rel="noreferrer" target="_blank">
                         <img
-                          className="titleMirror mark"
+                          className="titleMirror mark shake"
                           src={playmark}
                           alt="githubmark"
                         />
@@ -80,7 +120,7 @@ export const SectionThree = ({ parallax }) => {
                     ) : (
                       <a href={item.demo} rel="noreferrer" target="_blank">
                         <img
-                          className="titleMirror mark"
+                          className="titleMirror mark shake"
                           src={playmark}
                           alt="githubmark"
                         />
