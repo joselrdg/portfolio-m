@@ -64,7 +64,11 @@ export const SectionTwo = () => {
                 Web or App?
               </h3>
             </GlitchClip>
-            <a>Let's talk.</a>
+            <GlitchSquiggly onHover={true} className="marg">
+              <a href="https://github.com/" className="fill">
+                Let's talk.
+              </a>
+            </GlitchSquiggly>
           </div>
         </div>
       </ParallaxLayer>

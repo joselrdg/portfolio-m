@@ -1,7 +1,13 @@
 import "./Main.css";
-import React, { Suspense, useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  Suspense,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { useSpring, animated as a, interpolate } from 'react-spring'
+import { useSpring, animated as a, interpolate } from "react-spring";
 
 import { TextNeon } from "./common/textneon/TextNeon";
 import azotea from "./assets/imgcity/azoteac.png";
@@ -20,6 +26,7 @@ import pc1 from "./assets/imgcity/pc1.png";
 import { SectionOne } from "./sectionone/SectionOne";
 import { SectionTwo } from "./sectionone/SectionTwo";
 import { SectionThree } from "./sectionone/SectionThree";
+import { Contact } from "./sectionone/Contact";
 // import { Eyes } from "./common/Eyes/Eyes";
 
 const d = document.getElementById("game");
@@ -27,26 +34,33 @@ const d = document.getElementById("game");
 // Fonts: lasenter  clipneon  moon
 
 export const Main = () => {
-  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }))
+  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
   const parallax = useRef();
-  
 
   useEffect(() => {
     d.style.display = d.style.display == "none" ? "block" : "none";
   }, []);
 
-  const onMove = useCallback(({ clientX: x, clientY: y }) => set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }), [])
-  const onScroll = useCallback(e => set({ st: e.target.scrollTop / 30 }), [])
+  const onMove = useCallback(
+    ({ clientX: x, clientY: y }) =>
+      set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }),
+    []
+  );
+  const onScroll = useCallback((e) => set({ st: e.target.scrollTop / 30 }), []);
 
   const hidecanvas = () => {
     d.style.display = d.style.display == "none" ? "block" : "none";
     console.log("hidecanvas");
   };
-console.log(st)
-console.log(xy)
+  console.log(st);
+  console.log(xy);
   return (
-    <div style={{ width: "100%", height: "100%", background: "#253237" }}  onMouseMove={onMove} onScroll={onScroll}>
-      <Parallax ref={parallax} pages={4}>
+    <div
+      style={{ width: "100%", height: "100%", background: "#253237" }}
+      onMouseMove={onMove}
+      onScroll={onScroll}
+    >
+      <Parallax ref={parallax} pages={5}>
         <ParallaxLayer
           offset={1}
           speed={1}
@@ -147,9 +161,6 @@ console.log(xy)
           speed={-0.2}
           onClick={() => parallax.current.scrollTo(2)}
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
             backgroundColor: "#000000",
           }}
         >
@@ -171,6 +182,7 @@ console.log(xy)
         </ParallaxLayer> */}
         <SectionTwo />
         <SectionThree />
+        <Contact />
       </Parallax>
     </div>
   );
