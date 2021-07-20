@@ -11,35 +11,23 @@ export const SectionTwo = () => {
   return (
     <>
       <EyesInterval />
+      <ParallaxLayer
+        offset={2.5}
+        speed={1}
+        style={{ display: "block" }}
+      ></ParallaxLayer>
 
       <ParallaxLayer
         offset={2}
         speed={0.1}
-        style={
-          {
-            // display: "flex",
-            // flexDirection: "row",
-            // alignItems: "center",
-            // justifyContent: "center",
-          }
-        }
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        <div className="contain-section-two">
-          {/* <div className="title">
-            <MirrorText text="LOOKING FOR" size={4} />
-            <MirrorText text="WEB DEVELOPER? " size={4} />
-          </div>
-          <div style={{maxWidth: "30%"}}>
-            <MirrorText text="Hey, I'm José Luis Rodríguez ; )" size={2} />
-            <MirrorText
-              text="I'm a web developer and programmer living in Madrid, España."
-              size={2}
-            />
-            <MirrorText text="Inovation is my passion." size={2} />
-            <a>Let's talk.</a>
-          </div> */}
-          <Head />
-
+        {/* <div className="contain-section-two"> */}
           <div className="title titleMirror gradient-border">
             <GlitchSquiggly onHover={true}>
               <h1 className="bkg-text-stwo" style={{ margin: 0, padding: 0 }}>
@@ -70,7 +58,8 @@ export const SectionTwo = () => {
               </a>
             </GlitchSquiggly>
           </div>
-        </div>
+          <Head />
+        {/* </div> */}
       </ParallaxLayer>
     </>
   );
