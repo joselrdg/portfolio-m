@@ -72,51 +72,62 @@ export const CardPhoto = () => {
         {...bind(i)}
         style={{
           transform: interpolate([rot, scale], trans),
-          backgroundImage: `url(${PROJECTS[i].image})`,
+          // backgroundImage: `url(${PROJECTS[i].image})`,
         }}
       >
-        {PROJECTS[i].title}
-            <div>
-          <GlitchSquiggly onHover={true}>
-            <h2 className="titleMirror" style={{ marginBottom: 0, padding: 0 }}>
-              {PROJECTS[i].title}
-            </h2>
-          </GlitchSquiggly>
+        <div href="" className="card" style={{marginTop: '40px'}}>
+          <div className="_flex _jc_center _ai_center">
 
-          <GlitchClip onHover={true}>
-            <p className="titleMirror" style={{ margin: 0, padding: 0 }}>
-              {PROJECTS[i].subtitle}
-            </p>
-          </GlitchClip>
-        </div>
-        <div className="card-proyects-a">
-          <a href={PROJECTS[i].github} rel="noreferrer" target="_blank">
-            <img
-              className="titleMirror mark shake"
-              src={githubmark}
-              alt="githubmark"
-            />
-          </a>
-          {/* <a href={item.demo} rel="noreferrer" target="_blank">
-                      <p className="titleMirror mark">DEMO</p>
-                    </a> */}
-          {PROJECTS[i].title === "GO TO HELL WITH...CANVAS!!!" ? (
-            <a href={PROJECTS[i].demo} rel="noreferrer" target="_blank">
+          <img src={PROJECTS[i].image} className="card__image" alt=""/>
+          </div>
+          <div className="card__overlay" style={{ marginBottom:'40px'}}>
+            <div className="card__header">
+              <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+                <path />
+              </svg>
+              <a href={PROJECTS[i].demo} rel="noreferrer" target="_blank">
+                <img
+                  className="titleMirror mark shake"
+                  src={playmark}
+                  alt="githubmark"
+                />
+              </a>
+              {/* <img
+                className="card__thumb"
+                src="https://i.imgur.com/7D7I6dI.png"
+                alt=""
+              /> */}
+              <div className="card__header-text">
+                <h3 className="card__title">{PROJECTS[i].title}</h3>
+                {/* <span className="card__status">1 hour ago</span> */}
+              </div>
+            </div>
+            <p className="card__description">{PROJECTS[i].subtitle}</p>
+            <a href={PROJECTS[i].github} rel="noreferrer" target="_blank">
               <img
                 className="titleMirror mark shake"
-                src={playmark}
+                src={githubmark}
                 alt="githubmark"
               />
             </a>
-          ) : (
-            <a href={PROJECTS[i].demo} rel="noreferrer" target="_blank">
-              <img
-                className="titleMirror mark shake"
-                src={playmark}
-                alt="githubmark"
-              />
-            </a>
-          )}
+            {PROJECTS[i].title === "GO TO HELL WITH...CANVAS!!!" ? (
+              <a href={PROJECTS[i].demo} rel="noreferrer" target="_blank">
+                <img
+                  className="titleMirror mark shake"
+                  src={playmark}
+                  alt="githubmark"
+                />
+              </a>
+            ) : (
+              <a href={PROJECTS[i].demo} rel="noreferrer" target="_blank">
+                <img
+                  className="titleMirror mark shake"
+                  src={playmark}
+                  alt="githubmark"
+                />
+              </a>
+            )}
+          </div>
         </div>
       </animated.div>
     </animated.div>
