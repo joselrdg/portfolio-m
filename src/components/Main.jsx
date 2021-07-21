@@ -66,18 +66,6 @@ export const Main = () => {
           speed={1}
           style={{ backgroundColor: "#000000" }}
         />
-        {/* <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#87BCDE' }} /> */}
-
-        {/* <ParallaxLayer
-        offset={0}
-        speed={0}
-        factor={3}
-        style={{
-          backgroundImage: url('stars', true),
-          backgroundSize: 'cover',
-        }}
-      /> */}
-
         <ParallaxLayer
           offset={0}
           speed={-0.8}
@@ -87,28 +75,14 @@ export const Main = () => {
             backgroundPosition: "center 0%",
             backgroundSize: "cover",
           }}
-        >
-          {/* <img src={foncity} style={{ height: "100%" }} /> */}
-        </ParallaxLayer>
-
+        />
         <ParallaxLayer
           offset={0}
           speed={-0.6}
           style={{ pointerEvents: "none" }}
         >
           <SectionOne />
-
-          {/* <img src={url('satellite4')} style={{ width: '15%', marginLeft: '70%' }} /> */}
         </ParallaxLayer>
-
-        {/* <ParallaxLayer
-          offset={0.9}
-          speed={0.6}
-          factor={3}
-          style={{ pointerEvents: "none" }}
-          >
-          <img src={fondbase} style={{ width: "100%" }} />
-        </ParallaxLayer> */}
 
         <ParallaxLayer
           offset={1 - 0.04}
@@ -118,6 +92,7 @@ export const Main = () => {
         >
           <img src={fondbaseb} style={{ width: "100%" }} />
         </ParallaxLayer>
+
         <ParallaxLayer
           offset={1 - 0.001}
           speed={0.01}
@@ -132,15 +107,8 @@ export const Main = () => {
           speed={-0.1}
           factor={3}
           onClick={() => parallax.current.scrollTo(2)}
-          // style={{
-          //   display: "flex",
-          //   alignItems: "center",
-          //   justifyContent: "center",
-          // }}
-          // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
         >
           <img src={basecity} style={{ position: "center" }} />
-          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -151,7 +119,6 @@ export const Main = () => {
           style={{
             float: "right",
           }}
-          // style={{ backgroundImage: "url(base.png)", backgroundSize: "cover" }}
         >
           <img src={basecityd} />
         </ParallaxLayer>
@@ -163,23 +130,7 @@ export const Main = () => {
           style={{
             backgroundColor: "#000000",
           }}
-        >
-          {/* <img src={centrcity} /> */}
-          {/* <img src={url('bash')} style={{ width: '40%' }} /> */}
-        </ParallaxLayer>
-
-        {/* 
-        <ParallaxLayer
-        offset={1.6}
-        speed={0.1}
-        onClick={() => parallax.current.scrollTo(2)}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          }}
-          >
-        </ParallaxLayer> */}
+       />
         <SectionTwo />
         <SectionThree />
         <Contact />

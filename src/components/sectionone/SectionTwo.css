@@ -17,13 +17,20 @@
   flex-direction: column; */
   
 }
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .headsect{
+  max-height: 100px;
+  }
+}
+
+
 
 .titleMirror {
   /* position: relative; */
   /* font-family: 'Montserrat', Arial, sans-serif; */
   /* font-size: calc(20px + 5vw); */
   /* width: 100%; */
-
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.02em;

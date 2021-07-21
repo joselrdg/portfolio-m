@@ -5,8 +5,8 @@ import React from "react";
 export const TextNeon = ({ animation, text, font, size }) => {
   const animationfont = `animation-${font}`
   return (
-    <div className="neon">
-      <div style={{ fontSize: `${size}vw` }} className={`${font} ${animation && animationfont}`}>
+    <div className="">
+      <div style={{ fontSize: `${size}vw` }} className={`neon ${font} ${animation && animationfont}`}>
         {text}
       </div>
     </div>

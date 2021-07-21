@@ -1,4 +1,4 @@
-@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 
 @font-face {
   font-family: moon;
@@ -15,9 +15,6 @@
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/lasenter.ttf);
 }
 
-
-
-
 .neon {
   /* margin-bottom: ; */
   /* margin-left: -4vw; */
@@ -27,33 +24,40 @@
   /* left: 60vh; */
 }
 
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .neon {
+    font-size: 24em;
+  }
+}
+
 .lasenter {
   -ms-transform: rotate(-10deg); /* IE 9 */
   -webkit-transform: rotate(-10deg); /* Chrome, Safari, Opera */
-  color: #28D7FE;
+  color: #28d7fe;
   font-family: lasenter;
   /* margin-top: .4vw; */
   /* font-size: 1vw; */
   transform: rotate(-10deg);
-  text-shadow: 
-  .1vw 0vw .25vw #28D7FE, .2vw 0vw .25vw #28D7FE, .4vw 0vw .25vw #28D7FE, 
-  .1vw 0vw .1vw #1041FF, .2vw 0vw 0vw #1041FF, .4vw 0vw 0vw #1041FF,
-  .1vw 0vw .1vw #1041FF, .2vw 0vw .1vw #1041FF, .4vw 0vw 0vw #1041FF,
-  .1vw 0vw .8vw #1041FF, .2vw 0vw .8vw #1041FF, .4vw 0vw .8vw #1041FF, .2vw 0vw .5vw #1041FF,
-  .1vw 0vw .5vw #1041FF, .2vw 0vw .5vw #1041FF, .4vw 0vw .5vw #1041FF, 
-  .1vw 0vw 10vw #1041FF, .2vw 0vw 10vw #1041FF, .4vw 0vw 10vw #1041FF;
+  text-shadow: 0.1vw 0vw 0.25vw #28d7fe, 0.2vw 0vw 0.25vw #28d7fe,
+    0.4vw 0vw 0.25vw #28d7fe, 0.1vw 0vw 0.1vw #1041ff, 0.2vw 0vw 0vw #1041ff,
+    0.4vw 0vw 0vw #1041ff, 0.1vw 0vw 0.1vw #1041ff, 0.2vw 0vw 0.1vw #1041ff,
+    0.4vw 0vw 0vw #1041ff, 0.1vw 0vw 0.8vw #1041ff, 0.2vw 0vw 0.8vw #1041ff,
+    0.4vw 0vw 0.8vw #1041ff, 0.2vw 0vw 0.5vw #1041ff, 0.1vw 0vw 0.5vw #1041ff,
+    0.2vw 0vw 0.5vw #1041ff, 0.4vw 0vw 0.5vw #1041ff, 0.1vw 0vw 10vw #1041ff,
+    0.2vw 0vw 10vw #1041ff, 0.4vw 0vw 10vw #1041ff;
 }
 
 .clipneon {
   color: #ffa9a9;
   font-family: clipneon;
   /* font-size: 1vw; */
-  text-shadow: 
-  -.1vw 0vw .25vw #ffa9a9, -.2vw 0vw .25vw #ffa9a9, -.4vw 0vw .25vw #ffa9a9,
-  -.1vw 0vw .1vw #cc0000, -.2vw 0vw .1vw #cc0000, -.4vw 0vw .1vw #cc0000,
-  -.1vw 0vw .8vw #cc0000, -.2vw 0vw .8vw #cc0000, -.4vw 0vw .8vw #cc0000, .2vw 0vw .5vw #cc0000,
-  -.1vw 0vw .5vw #cc0000, -.2vw 0vw .5vw #cc0000, -.4vw 0vw .5vw #cc0000, 
-  -.1vw 0vw 10vw #cc0000, -.2vw 0vw 10vw #cc0000, -.4vw 0vw 10vw #cc0000;
+  text-shadow: -0.1vw 0vw 0.25vw #ffa9a9, -0.2vw 0vw 0.25vw #ffa9a9,
+    -0.4vw 0vw 0.25vw #ffa9a9, -0.1vw 0vw 0.1vw #cc0000,
+    -0.2vw 0vw 0.1vw #cc0000, -0.4vw 0vw 0.1vw #cc0000, -0.1vw 0vw 0.8vw #cc0000,
+    -0.2vw 0vw 0.8vw #cc0000, -0.4vw 0vw 0.8vw #cc0000, 0.2vw 0vw 0.5vw #cc0000,
+    -0.1vw 0vw 0.5vw #cc0000, -0.2vw 0vw 0.5vw #cc0000, -0.4vw 0vw 0.5vw #cc0000,
+    -0.1vw 0vw 10vw #cc0000, -0.2vw 0vw 10vw #cc0000, -0.4vw 0vw 10vw #cc0000;
 }
 
 .moon {
@@ -80,47 +84,55 @@
     -ms-transform: translateZ(0);
     -o-transform: translateZ(0);
     transform: translateZ(0);
-    color: #FBB4FF;
-    text-shadow: 
-  -.1vw 0vw .25vw #FBB4FF, -.2vw 0vw .25vw #FBB4FF, -.4vw 0vw .25vw #FBB4FF, 
-  -.1vw 0vw 1vw #E82FF5, -.2vw 0vw .8vw #E82FF5, -.4vw 0vw .8vw #E82FF5, .2vw 0vw .5vw #E82FF5,
-  -.1vw 0vw 10vw #CB16FA, -.2vw 0vw 10vw #CB16FA, -.4vw 0vw 10vw #CB16FA;
+    color: #fbb4ff;
+    text-shadow: -0.1vw 0vw 0.25vw #fbb4ff, -0.2vw 0vw 0.25vw #fbb4ff,
+      -0.4vw 0vw 0.25vw #fbb4ff, -0.1vw 0vw 1vw #e82ff5,
+      -0.2vw 0vw 0.8vw #e82ff5, -0.4vw 0vw 0.8vw #e82ff5,
+      0.2vw 0vw 0.5vw #e82ff5, -0.1vw 0vw 10vw #cb16fa, -0.2vw 0vw 10vw #cb16fa,
+      -0.4vw 0vw 10vw #cb16fa;
   }
   50% {
     /* Enable hardware acceleration to fix laggy transitions */
-   -webkit-transform: translateZ(0);
-   -moz-transform: translateZ(0);
-   -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
     -o-transform: translateZ(0);
     transform: translateZ(0);
-    color: #8F5493;
-    text-shadow: 
-  -.1vw 0vw .25vw #8F5493, -.2vw 0vw .25vw #8F5493, -.4vw 0vw .25vw #8F5493, 
-  -.1vw 0vw .8vw #59125E, -.2vw 0vw .8vw #59125E, -.4vw 0vw .8vw #59125E, .2vw 0vw .5vw #59125E,
-  -.1vw 0vw 3vw #42114E, -.2vw 0vw 3vw #42114E, -.4vw 0vw 3vw #42114E;
+    color: #8f5493;
+    text-shadow: -0.1vw 0vw 0.25vw #8f5493, -0.2vw 0vw 0.25vw #8f5493,
+      -0.4vw 0vw 0.25vw #8f5493, -0.1vw 0vw 0.8vw #59125e,
+      -0.2vw 0vw 0.8vw #59125e, -0.4vw 0vw 0.8vw #59125e,
+      0.2vw 0vw 0.5vw #59125e, -0.1vw 0vw 3vw #42114e, -0.2vw 0vw 3vw #42114e,
+      -0.4vw 0vw 3vw #42114e;
   }
 }
 
 .animation-clipneon {
-      animation: flicker 3s infinite alternate;  
-} 
-
+  animation: flicker 3s infinite alternate;
+}
 
 /* Flickering animation */
 @keyframes flicker {
-    
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-
-      text-shadow:
-      -.1vw 0vw .25vw #ffa9a9, -.2vw 0vw .25vw #ffa9a9, -.4vw 0vw .25vw #ffa9a9,
-      -.1vw 0vw .1vw #cc0000, -.2vw 0vw .1vw #cc0000, -.4vw 0vw .1vw #cc0000,
-      -.1vw 0vw .8vw #cc0000, -.2vw 0vw .8vw #cc0000, -.4vw 0vw .8vw #cc0000, .2vw 0vw .5vw #cc0000,
-      -.1vw 0vw .5vw #cc0000, -.2vw 0vw .5vw #cc0000, -.4vw 0vw .5vw #cc0000, 
-      -.1vw 0vw 10vw #cc0000, -.2vw 0vw 10vw #cc0000, -.4vw 0vw 10vw #cc0000;
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: -0.1vw 0vw 0.25vw #ffa9a9, -0.2vw 0vw 0.25vw #ffa9a9,
+      -0.4vw 0vw 0.25vw #ffa9a9, -0.1vw 0vw 0.1vw #cc0000,
+      -0.2vw 0vw 0.1vw #cc0000, -0.4vw 0vw 0.1vw #cc0000,
+      -0.1vw 0vw 0.8vw #cc0000, -0.2vw 0vw 0.8vw #cc0000,
+      -0.4vw 0vw 0.8vw #cc0000, 0.2vw 0vw 0.5vw #cc0000,
+      -0.1vw 0vw 0.5vw #cc0000, -0.2vw 0vw 0.5vw #cc0000,
+      -0.4vw 0vw 0.5vw #cc0000, -0.1vw 0vw 10vw #cc0000, -0.2vw 0vw 10vw #cc0000,
+      -0.4vw 0vw 10vw #cc0000;
   }
-  
-  20%, 24%, 55% {        
-      text-shadow: none;
-  }    
-}
 
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}

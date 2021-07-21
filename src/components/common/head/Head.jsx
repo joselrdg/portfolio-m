@@ -116,11 +116,11 @@ export const Head = () => {
 
   return (
     <img
+      className="headimg"
       onMouseEnter={() => onMouseEnter(true)}
       onMouseLeave={() => onMouseLeave(false)}
       src={imgsHead[stateSeconds.seconds]}
       alt="head"
-      style={{width: 'auto'}}
     />
   );
 };

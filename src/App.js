@@ -11,8 +11,6 @@ function App() {
       <Suspense fallback={<h1>Loading SectionOne...</h1>}>
         <Main />
       </Suspense>
-
-      {/* <SectionTwo/> */}
     </div>
   );
 }

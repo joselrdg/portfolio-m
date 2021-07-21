@@ -11,10 +11,10 @@ import estructure from "../assets/imgcity/foncity.jpg";
 
 export const SectionOne = () => {
   return (
-      <div className="sectionOne __flex __fd-col-r __ai-center __jc-center">
+      <div className="sectionOne _flex _fd_col_r _ai_center _jc_center">
         {/* <TextNeon text={`< JL R />`} font="moon" size={4} />*/}
         {/* <img src={azotea} alt="azotea" className="imgazotea" />  */}
-        <div className="cartel __flex __fd-col __ai-center __jc-center">
+        <div className="cartel _flex _fd_col _ai_center _jc_center">
           <TextNeon
             className="textneon"
             // animation
