@@ -9,6 +9,7 @@ import demomark from "../../assets/githubmark/demo.jpg";
 import playmark from "../../assets/githubmark/play.png";
 import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";
 import GlitchClip from "react-glitch-effect/core/GlitchClip";
+import CardBack from '../../assets/card.png'
 
 const cards = [
   "https://upload.wikimedia.org/wikipedia/en/f/f5/RWS_Tarot_08_Strength.jpg",
@@ -72,7 +73,9 @@ export const CardPhoto = () => {
         {...bind(i)}
         style={{
           transform: interpolate([rot, scale], trans),
-          // backgroundImage: `url(${PROJECTS[i].image})`,
+          backgroundImage: `url(${CardBack})`,
+          backgroundSize: 'cover'
+          
         }}
       >
         <div href="" className="card" style={{marginTop: '40px'}}>
@@ -80,25 +83,18 @@ export const CardPhoto = () => {
 
           <img src={PROJECTS[i].image} className="card__image" alt=""/>
           </div>
-          <div className="card__overlay" style={{ marginBottom:'40px'}}>
-            <div className="card__header">
-              <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
+          <div className="card__overlay" style={{ margin:'0px'}}>
+            <div className="card__header" style={{margin: '0px', textAlign: 'center'}}>
+              <svg className="card__arc" xmlns="http://www.w3.org/2000/svg" style={{margin: '0px', padding: '0px'}}>
                 <path />
               </svg>
-              <a href={PROJECTS[i].demo} rel="noreferrer" target="_blank">
-                <img
-                  className="titleMirror mark shake"
-                  src={playmark}
-                  alt="githubmark"
-                />
-              </a>
-              {/* <img
+                          {/* <img
                 className="card__thumb"
                 src="https://i.imgur.com/7D7I6dI.png"
                 alt=""
               /> */}
               <div className="card__header-text">
-                <h3 className="card__title">{PROJECTS[i].title}</h3>
+                <h3 className="card__title"  style={{ textAlign: 'center'}}>{PROJECTS[i].title}</h3>
                 {/* <span className="card__status">1 hour ago</span> */}
               </div>
             </div>
