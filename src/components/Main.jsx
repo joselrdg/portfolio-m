@@ -101,16 +101,6 @@ export const Main = () => {
         >
           <img src={fondbasebd} style={{ width: "100%" }} />
         </ParallaxLayer>
-
-        <ParallaxLayer
-          offset={0.7}
-          speed={-0.1}
-          factor={3}
-          onClick={() => parallax.current.scrollTo(2)}
-        >
-          <img src={basecity} style={{ position: "center" }} />
-        </ParallaxLayer>
-
         <ParallaxLayer
           offset={1 - 0.01}
           speed={0.3}
@@ -122,6 +112,16 @@ export const Main = () => {
         >
           <img src={basecityd} />
         </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={0.7}
+          speed={-0.1}
+          factor={3}
+          onClick={() => parallax.current.scrollTo(2)}
+        >
+          <img src={basecity} style={{ position: "center" }} />
+        </ParallaxLayer>
+
 
         <ParallaxLayer
           offset={1.8}

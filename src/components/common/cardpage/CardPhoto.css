@@ -8,6 +8,8 @@
   justify-content: center;
   touch-action: none;
 }
+.container_card_image{
+}
 
 .animatedcard {
   background-color: white;
@@ -20,8 +22,8 @@
   max-height: 570px;
   will-change: transform;
   border-radius: 10px;
-  box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
-    0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  box-shadow: 0 12.5px 100px -10px rgba(94, 94, 204, 0.4),
+    0 10px 10px -10px rgba(238, 104, 160, 0.452);
 }
 
 .containertextcard {
@@ -46,7 +48,7 @@
 
 .card {
   /* background: black; */
-  background-color: black;
+  /* background-color: rgb(156, 20, 20); */
 
   position: relative;
   display: block;
@@ -56,19 +58,19 @@
   text-decoration: none;
 }
 
-.card__image {      
+.card__image {    
   width: 500px;
   height: auto;
 }
 
 .card__overlay {
   position: absolute;
-
-  bottom: 0;
+    bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;      
   border-radius: calc(var(--curve) * 1px);    
+  border-top-left-radius: 45px;
   background-color: var(--surface-color);      
   transform: translateY(100%);
   transition: .2s ease-in-out;
@@ -122,6 +124,9 @@
 
 .card__title {
   font-size: 1em;
+  background-color: black;
+  padding: 30px;
+  border-radius: 50%;
   margin: 0 0 .3em;
   color: #6A515E;
 }
@@ -142,7 +147,7 @@
 .card__description {
   padding: 0 2em 2em;
   margin: 0;
-  color: #D7BDCA;
+  color: #c7c7c7;
   font-family: "MockFlowFont";   
   display: -webkit-box;
   -webkit-box-orient: vertical;

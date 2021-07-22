@@ -1,0 +1,122 @@
+/* Here's some environment setup,
+   scroll down for the interesting parts */
+
+   @import url('https://fonts.googleapis.com/css?family=Lato:200');
+
+
+   .social-icons {
+    /* padding: 0;
+    list-style: none;
+    margin: 1em; */
+  }
+  
+  .social-icons li {
+    /* display: inline-block;
+    margin: 0.15em;
+    position: relative;
+    font-size: 1em; */
+  }
+  
+  .social-icons i {
+    color: #fff;
+  
+    transition: all 265ms ease-out;
+  }
+  
+  /* .social-icons {
+    display: inline-block;
+  } */
+  
+
+  .social-icons:hover:before {
+    transform: scale(0);
+    transition: all 265ms ease-in;
+  }
+  
+  .social-icons:hover i {
+    transform: scale(2.2);
+    -ms-transform: scale(2.2);
+    -webkit-transform: scale(2.2);
+    color: #ff003c;
+    background: -webkit-linear-gradient(45deg, #ff003c, #0575E6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 265ms ease-in;
+  }
+
+
+
+
+   
+   .animated-box {
+     font-family: 'Lato';
+     color: #ffffff;
+     padding: 10px 50px;
+     margin: 30px;
+     text-align: center;
+     border-radius: 4px;
+   }
+   
+   .animated-box h1 {
+     font-weight: 200;
+     font-size: 40px;
+     text-transform: uppercase;
+   }
+   
+   .animated-box p {
+     font-weight: 200;
+   }
+   
+   /* The animation starts here */
+   .animated-box {
+     position: relative;
+   }
+   
+   .animated-box:after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     border-radius: 4px;
+     background: linear-gradient(120deg, #ff003c, #0575E6, #ff003c);
+     background-size: 300% 300%;
+     clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+   }
+   
+   .animated-box.in:after {
+     animation: frame-enter 1s forwards ease-in-out reverse, gradient-animation 4s ease-in-out infinite;
+   }
+   
+   /* motion */
+   @keyframes gradient-animation {
+     0% {
+       background-position: 15% 0%;
+     }
+     50% {
+       background-position: 85% 100%;
+     }
+     100% {
+       background-position: 15% 0%;
+     }
+   }
+   
+   @keyframes frame-enter {
+     0% {
+       clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+     }
+     25% {
+       clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 100%, 100% 100%, 100% 0%, 0% 0%);
+     }
+     50% {
+       clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, calc(100% - 3px) 3px, 100% 0%, 0% 0%);
+     }
+     75% {
+       -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 0%, 0% 0%);
+     }
+     100% {
+       -webkit-clip-path: polygon(0% 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 3px 100%, 0% 100%);
+     }
+   }
+   

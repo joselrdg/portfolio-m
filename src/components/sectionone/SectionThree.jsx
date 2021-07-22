@@ -2,7 +2,6 @@ import { ParallaxLayer } from "@react-spring/parallax";
 import React, { useEffect, useState } from "react";
 import "./SectionThree.css";
 import { PROJECTS } from "./PROJECTS";
-import { CardPage } from "../common/cardpage/CardPage";
 import githubmark from "../assets/githubmark/GitHubLight32px.png";
 import demomark from "../assets/githubmark/demo.jpg";
 import playmark from "../assets/githubmark/play.png";
@@ -31,24 +30,31 @@ export const SectionThree = ({ parallax }) => {
     <>
       <ParallaxLayer
         offset={3}
-        speed={0.1}
+        speed={0.2}
         style={{
           display: "flex",
           flexDirection: "row",
           // alignItems: "center",
           justifyContent: "center",
-          color: "red",
           backgroundColor: "#000000",
         }}
       >
+     
         <div className="card-proyects-container">
-          <div>
-            <GlitchSquiggly onHover={true}>
+          <GlitchSquiggly onHover={true} style={{ margin: 0, padding: 0 }}>
+            <h1
+              className="titleMirror proyectsTitle"
+              style={{ margin: 0, padding: 0 }}
+            >
+              Proyects & Demos
+            </h1>
+          </GlitchSquiggly>
+          {/* <GlitchSquiggly onHover={true}>
               <h1
-                className="titleMirror proyectsTitle"
+                className="titleMirror proyectsTitle "
                 style={{ margin: 0, padding: 0 }}
               >
-                Proyects
+                
               </h1>
             </GlitchSquiggly>
             <GlitchSquiggly onHover={true}>
@@ -56,20 +62,12 @@ export const SectionThree = ({ parallax }) => {
                 className="titleMirror proyectsTitle "
                 style={{ margin: 0, padding: 0 }}
               >
-                &
+                
               </h1>
-            </GlitchSquiggly>
-            <GlitchSquiggly onHover={true}>
-              <h1
-                className="titleMirror proyectsTitle "
-                style={{ margin: 0, padding: 0 }}
-              >
-                Demos
-              </h1>
-            </GlitchSquiggly>
-          </div>
+            </GlitchSquiggly> */}
         </div>
-            <CardPhoto />
+        <CardPhoto />
+     
       </ParallaxLayer>
     </>
   );
