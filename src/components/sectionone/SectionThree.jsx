@@ -4,7 +4,7 @@ import "./SectionThree.css";
 import { PROJECTS } from "./PROJECTS";
 import githubmark from "../assets/githubmark/GitHubLight32px.png";
 import demomark from "../assets/githubmark/demo.jpg";
-import playmark from "../assets/githubmark/play.png";
+import cartelgif from "../assets/cartelx.gif";
 import GlitchClip from "react-glitch-effect/core/GlitchClip";
 import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";
 import { CardPhoto } from "../common/cardpage/CardPhoto";
@@ -36,10 +36,20 @@ export const SectionThree = ({ parallax }) => {
           flexDirection: "row",
           // alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#000000",
+          backgroundColor:'black',
+          backgroundImage: "url(ncartel.gif)",
+          backgroundPosition: "center 0%",
+          backgroundSize: "contain",
         }}
       >
-     
+        {/* <img
+          className="headimg"
+          onMouseEnter={() => onMouseEnter(true)}
+          onMouseLeave={() => onMouseLeave(false)}
+          src={"url(fondcity.jpg)"}
+          alt="head"
+        /> */}
+
         <div className="card-proyects-container">
           <GlitchSquiggly onHover={true} style={{ margin: 0, padding: 0 }}>
             <h1
@@ -67,7 +77,6 @@ export const SectionThree = ({ parallax }) => {
             </GlitchSquiggly> */}
         </div>
         <CardPhoto />
-     
       </ParallaxLayer>
     </>
   );

@@ -62,13 +62,13 @@ export const Main = () => {
     >
       <Parallax ref={parallax} pages={5}>
         <ParallaxLayer
-          offset={1}
-          speed={1}
+          offset={5}
+          speed={-2}
           style={{ backgroundColor: "#000000" }}
         />
         <ParallaxLayer
           offset={0}
-          speed={-0.8}
+          speed={-0.6}
           factor={1}
           style={{
             backgroundImage: "url(fondcity.jpg)",
@@ -78,7 +78,7 @@ export const Main = () => {
         />
         <ParallaxLayer
           offset={0}
-          speed={-0.6}
+          speed={-0.8}
           style={{ pointerEvents: "none" }}
         >
           <SectionOne />

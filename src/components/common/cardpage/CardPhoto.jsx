@@ -99,13 +99,13 @@ export const CardPhoto = () => {
               className="card__header"
               style={{ margin: "0px", textAlign: "center" }}
             >
-              {/* <svg
+              <svg
                 className="card__arc"
                 xmlns="http://www.w3.org/2000/svg"
                 style={{ margin: "0px", padding: "0px" }}
               >
                 <path />
-              </svg> */}
+              </svg>
               {/* <img
                 className="card__thumb"
                 src="https://i.imgur.com/7D7I6dI.png"
