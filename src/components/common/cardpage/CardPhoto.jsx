@@ -114,7 +114,7 @@ export const CardPhoto = () => {
               <div className="card__header-text">
                 <h3
                   className="animated-box in card__title "
-                  style={{ textAlign: "center", color: "white" }}
+                  style={{  color: "white" }}
                 >
                   {PROJECTS[i].title}
                 </h3>

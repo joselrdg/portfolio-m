@@ -18,14 +18,15 @@
   }
   
   .social-icons i {
+
     color: #fff;
   
     transition: all 265ms ease-out;
   }
   
-  /* .social-icons {
-    display: inline-block;
-  } */
+  .social-icons::before {
+    text-shadow: 1px 1px 2px black;
+  }
   
 
   .social-icons:hover:before {
@@ -52,9 +53,10 @@
      font-family: 'Lato';
      color: #ffffff;
      padding: 10px 50px;
-     margin: 30px;
+     margin: 20px;
      text-align: center;
      border-radius: 4px;
+     background-color: rgba(0, 0, 0, 0.329);
    }
    
    .animated-box h1 {
@@ -70,9 +72,11 @@
    /* The animation starts here */
    .animated-box {
      position: relative;
-   }
-   
-   .animated-box:after {
+     
+    }
+
+    
+    .animated-box:after {
      content: '';
      position: absolute;
      top: 0;

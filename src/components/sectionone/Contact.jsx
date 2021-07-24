@@ -4,12 +4,12 @@ import { BorderIcon } from "../common/bordericon/BorderIcon";
 
 const icons = [
   {
-    icon: <i class="fab fa-linkedin-in"></i>,
-    link: "https://www.linkedin.com/in/joseluis-rodriguez-gonzalez/",
-  },
-  {
     icon: <i class="fab fa-github"></i>,
     link: "https://github.com/joselrdg",
+  },
+  {
+    icon: <i class="fab fa-linkedin-in"></i>,
+    link: "https://www.linkedin.com/in/joseluis-rodriguez-gonzalez/",
   },
   {
     icon: <i class="fas fa-at"></i>,
@@ -22,23 +22,30 @@ export const Contact = () => {
  
     <ParallaxLayer
       offset={4}
-      speed={0.1}
+      speed={1}
       style={{
         display: "flex",
         // flexDirection: "row",
         flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "center",
-        color: "red",
-        backgroundColor: "#000000",
-        backgroundImage: 'url(tenor.gif)',
+        backgroundImage: 'url(bs.gif)',
         backgroundPosition: "center 0%",
-        backgroundSize: "contain",
+        backgroundSize: "cover",
       }}
     >
+      <div  style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: "200px"
+      }}>
       {icons.map((icon) => (
-        <BorderIcon icon={icon.icon} link={icon.link} />
+        <BorderIcon icon={icon.icon} link={icon.link}/>
       ))}
+
+      </div>
     </ParallaxLayer>
     </>
   );

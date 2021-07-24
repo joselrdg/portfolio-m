@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Head.css";
-import head0 from "../../assets/head/1.png";
+import head0 from "../../assets/head/1.gif";
 import head1 from "../../assets/head/23.png";
 import head2 from "../../assets/head/24.png";
 import head3 from "../../assets/head/25.png";

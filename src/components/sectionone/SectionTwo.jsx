@@ -14,7 +14,7 @@ export const SectionTwo = () => {
     
       <ParallaxLayer
         offset={2}
-        speed={0.1}
+        speed={0.3}
         style={{
           display: "flex",
           flexWrap: "wrap",

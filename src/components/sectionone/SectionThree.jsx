@@ -30,7 +30,7 @@ export const SectionThree = ({ parallax }) => {
     <>
       <ParallaxLayer
         offset={3}
-        speed={0.2}
+        speed={-0.1}
         style={{
           display: "flex",
           flexDirection: "row",
@@ -40,7 +40,6 @@ export const SectionThree = ({ parallax }) => {
           backgroundImage: "url(cartelx.gif)",
           backgroundPosition: "center 0%",
           backgroundSize: "contain",
-          paddingBottom: "100px",
         }}
       >
         {/* <img
@@ -52,7 +51,7 @@ export const SectionThree = ({ parallax }) => {
         /> */}
 
         <div className="card-proyects-container">
-          <GlitchSquiggly onHover={true} style={{ margin: 0, padding: 0 }}>
+          <GlitchSquiggly onHover={true} style={{ margin: '60px 20px', padding: 0 }}>
             <h1
               className="titleMirror proyectsTitle"
               style={{ margin: 0, padding: 0 }}
@@ -79,16 +78,6 @@ export const SectionThree = ({ parallax }) => {
         </div>
         <CardPhoto />
       </ParallaxLayer>
-      <ParallaxLayer
-        offset={3.9}
-        speed={2}
-        factor={1}
-        style={{
-          backgroundImage: "url(bal.gif)",
-          backgroundPosition: "center 0%",
-          backgroundSize: "contain",
-        }}
-      />
     </>
   );
 };
