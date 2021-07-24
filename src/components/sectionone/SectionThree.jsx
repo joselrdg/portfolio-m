@@ -36,10 +36,11 @@ export const SectionThree = ({ parallax }) => {
           flexDirection: "row",
           // alignItems: "center",
           justifyContent: "center",
-          backgroundColor:'black',
-          backgroundImage: "url(ncartel.gif)",
+          backgroundColor: "black",
+          backgroundImage: "url(cartelx.gif)",
           backgroundPosition: "center 0%",
           backgroundSize: "contain",
+          paddingBottom: "100px",
         }}
       >
         {/* <img
@@ -78,6 +79,16 @@ export const SectionThree = ({ parallax }) => {
         </div>
         <CardPhoto />
       </ParallaxLayer>
+      <ParallaxLayer
+        offset={3.9}
+        speed={2}
+        factor={1}
+        style={{
+          backgroundImage: "url(bal.gif)",
+          backgroundPosition: "center 0%",
+          backgroundSize: "contain",
+        }}
+      />
     </>
   );
 };

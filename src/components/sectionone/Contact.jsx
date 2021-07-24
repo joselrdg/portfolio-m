@@ -31,6 +31,9 @@ export const Contact = () => {
         justifyContent: "center",
         color: "red",
         backgroundColor: "#000000",
+        backgroundImage: 'url(tenor.gif)',
+        backgroundPosition: "center 0%",
+        backgroundSize: "contain",
       }}
     >
       {icons.map((icon) => (
