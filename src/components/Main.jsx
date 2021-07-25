@@ -16,7 +16,7 @@ import { SectionTwo } from "./sectionone/SectionTwo";
 import { SectionThree } from "./sectionone/SectionThree";
 import { Contact } from "./sectionone/Contact";
 
-const d = document.getElementById("game");
+// const d = document.getElementById("game");
 
 // Fonts: lasenter  clipneon  moon
 
