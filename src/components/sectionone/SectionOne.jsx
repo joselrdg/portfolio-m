@@ -1,11 +1,7 @@
 import "./SectionOne.css";
-import React, { useRef } from "react";
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import React from "react";
 
 import { TextNeon } from "../common/textneon/TextNeon";
-import azotea from "../assets/imgcity/azoteac.png";
-// import estructure from "../assets/imgcity/estructura.png";
-import estructure from "../assets/imgcity/foncity.jpg";
 
 // Fonts: lasenter  clipneon  moon
 

@@ -1,33 +1,20 @@
 import "./Main.css";
 import React, {
-  Suspense,
   useCallback,
   useEffect,
   useRef,
-  useState,
 } from "react";
-import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useSpring, animated as a, interpolate } from "react-spring";
 
-import { TextNeon } from "./common/textneon/TextNeon";
-import azotea from "./assets/imgcity/azoteac.png";
-import estructure from "./assets/imgcity/estructura.png";
 import basecity from "./assets/imgcity/base.png";
 import basecityd from "./assets/imgcity/based.png";
-import centrcity from "./assets/imgcity/centrcity.png";
-import city from "./assets/imgcity/medicity.png";
-import foncity from "./assets/imgcity/fondcity.jpg";
-import fondbase from "./assets/imgcity/fondbase.png";
 import fondbaseb from "./assets/imgcity/fondbaseb.png";
-import fondbased from "./assets/imgcity/fondbased.png";
 import fondbasebd from "./assets/imgcity/fondbasebd.png";
-import pacm from "./assets/imgcity/pacm.png";
-import pc1 from "./assets/imgcity/pc1.png";
 import { SectionOne } from "./sectionone/SectionOne";
 import { SectionTwo } from "./sectionone/SectionTwo";
 import { SectionThree } from "./sectionone/SectionThree";
 import { Contact } from "./sectionone/Contact";
-// import { Eyes } from "./common/Eyes/Eyes";
 
 const d = document.getElementById("game");
 
