@@ -1,11 +1,11 @@
 import "./Main.css";
 import React, {
-  useCallback,
+  // useCallback,
   useEffect,
   useRef,
 } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import { useSpring, animated as a, interpolate } from "react-spring";
+// import { useSpring, animated as a, interpolate } from "react-spring";
 
 import basecity from "./assets/imgcity/base.png";
 import basecityd from "./assets/imgcity/based.png";
@@ -21,31 +21,28 @@ const d = document.getElementById("game");
 // Fonts: lasenter  clipneon  moon
 
 export const Main = () => {
-  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
+  // const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
   const parallax = useRef();
 
   useEffect(() => {
-    d.style.display = d.style.display == "none" ? "block" : "none";
+    // d.style.display = d.style.display === "none" ? "block" : "none";
   }, []);
 
-  const onMove = useCallback(
-    ({ clientX: x, clientY: y }) =>
-      set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }),
-    []
-  );
-  const onScroll = useCallback((e) => set({ st: e.target.scrollTop / 30 }), []);
+  // const onMove = useCallback(
+  //   ({ clientX: x, clientY: y }) =>
+  //     set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }),
+  //   []
+  // );
+  // const onScroll = useCallback((e) => set({ st: e.target.scrollTop / 30 }), []);
 
-  const hidecanvas = () => {
-    d.style.display = d.style.display == "none" ? "block" : "none";
-    console.log("hidecanvas");
-  };
-  console.log(st);
-  console.log(xy);
+  // const hidecanvas = () => {
+  //   d.style.display = d.style.display == "none" ? "block" : "none";
+  // };
   return (
     <div
       style={{ width: "100%", height: "100%", background: "#253237" }}
-      onMouseMove={onMove}
-      onScroll={onScroll}
+      // onMouseMove={onMove}
+      // onScroll={onScroll}
     >
       <Parallax ref={parallax} pages={5}>
         <ParallaxLayer
@@ -77,7 +74,7 @@ export const Main = () => {
           factor={1}
           style={{ pointerEvents: "none" }}
         >
-          <img src={fondbaseb} style={{ width: "100%" }} />
+          <img src={fondbaseb} style={{ width: "100%" }}  alt="futuristic city"/>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -86,7 +83,7 @@ export const Main = () => {
           factor={1}
           style={{ pointerEvents: "none" }}
         >
-          <img src={fondbasebd} style={{ width: "100%" }} />
+          <img src={fondbasebd} style={{ width: "100%" }}  alt="futuristic city"/>
         </ParallaxLayer>
         <ParallaxLayer
           offset={1 - 0.01}
@@ -97,7 +94,7 @@ export const Main = () => {
             float: "right",
           }}
         >
-          <img src={basecityd} />
+          <img src={basecityd}  alt="futuristic city"/>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -106,7 +103,7 @@ export const Main = () => {
           factor={3}
           onClick={() => parallax.current.scrollTo(2)}
         >
-          <img src={basecity} style={{ position: "center" }} />
+          <img src={basecity} style={{ position: "center" }} alt="futuristic city" />
         </ParallaxLayer>
 
 

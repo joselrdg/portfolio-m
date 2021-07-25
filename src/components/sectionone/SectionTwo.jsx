@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import "./SectionTwo.css";
 import { ParallaxLayer } from "@react-spring/parallax";
 import { EyesInterval } from "../common/Eyes/EyesInterval";
-import { MirrorText } from "../common/MirrorText/MirrorText";
 import { Head } from "../common/head/Head";
 import GlitchClip from "react-glitch-effect/core/GlitchClip";
 import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";

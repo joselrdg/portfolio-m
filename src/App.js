@@ -1,11 +1,16 @@
 import './App.css';
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Main } from './components/Main'
-import { SectionTwo } from './components/sectionone/SectionTwo';
+import { ScriptClient } from './scriptclient/ScriptClient';
 
 
 
 function App() {
+
+  useEffect(() => {
+    ScriptClient()
+  }, [])
+
   return (
     <div>
       <Suspense fallback={<h1>Loading SectionOne...</h1>}>

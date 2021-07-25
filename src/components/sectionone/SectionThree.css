@@ -31,7 +31,7 @@
 
 .card-proyects-a {
   display: flex;
-  justify-content: start;
+  /* justify-content: start; */
   align-items: center;
 }
 

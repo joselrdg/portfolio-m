@@ -1,15 +1,11 @@
-import { render } from "react-dom";
 import React, { useState } from "react";
 import { useSprings, animated, to as interpolate } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import "./CardPhoto.css";
 import { PROJECTS } from "../../sectionone/PROJECTS.js";
 import githubmark from "../../assets/githubmark/GitHubLight32px.png";
-import demomark from "../../assets/githubmark/demo.jpg";
 import playmark from "../../assets/githubmark/play.png";
-import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";
-import GlitchClip from "react-glitch-effect/core/GlitchClip";
-import CardBack from "../../assets/card.png";
+
 
 const cards = [
   "https://upload.wikimedia.org/wikipedia/en/f/f5/RWS_Tarot_08_Strength.jpg",
@@ -34,7 +30,6 @@ const trans = (r, s) =>
   }deg) rotateZ(${r}deg) scale(${s})`;
 
 export const CardPhoto = () => {
-  console.log(PROJECTS);
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
   const [props, set] = useSprings(cards.length, (i) => ({
     ...to(i),
