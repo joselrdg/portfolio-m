@@ -1,5 +1,5 @@
 
 export const ScriptClient = () => {
-    return console.log('ScriptClient')
+    return null
 
 }
