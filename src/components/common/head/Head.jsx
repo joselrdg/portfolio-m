@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Head.css";
-import head0 from "../../assets/head/1.gif";
-import head1 from "../../assets/head/23.png";
-import head2 from "../../assets/head/24.png";
-import head3 from "../../assets/head/25.png";
-import head4 from "../../assets/head/26.png";
-import head5 from "../../assets/head/27.png";
-import head6 from "../../assets/head/28.png";
+import gif from "../../assets/head/1.gif";
+import animation1 from "../../assets/head/23.png";
+import animation2 from "../../assets/head/24.png";
+import animation3 from "../../assets/head/25.png";
+import animation4 from "../../assets/head/26.png";
+import animation5 from "../../assets/head/27.png";
+import animation6 from "../../assets/head/28.png";
 import head7 from "../../assets/head/29.png";
 import head8 from "../../assets/head/30.png";
 import head9 from "../../assets/head/31.png";
@@ -24,12 +24,12 @@ import head20 from "../../assets/head/42.png";
 import head21 from "../../assets/head/43.png";
 
 const imgsHead = [
-  head1,
-  head2,
-  head3,
-  head4,
-  head5,
-  head6,
+  animation1,
+  animation2,
+  animation3,
+  animation4,
+  animation5,
+  animation6,
   head7,
   head8,
   head9,
@@ -45,81 +45,72 @@ const imgsHead = [
   head19,
   head20,
   head21,
-  head0,
+  gif,
 ];
 
 export const Head = () => {
-  const refEyes = useRef(0);
-  const refAnimation = useRef(false);
+  const refRep = useRef(0);
+  const refAnimation = useRef(0);
   const [stateSeconds, setStateSeconds] = useState({
-    seconds: 0,
+    img: 0,
   });
-  const [stateAnimation, setStateAnimation] = useState({
-    animation: 0,
-  });
+
   useEffect(() => {
     const interval = setInterval(() => {
-      refEyes.current = refEyes.current + 1;
-      if (stateAnimation.animation === 0) {
-        if (stateSeconds.seconds < 0) {
-          setStateSeconds({ seconds: 0 });
+      if (refAnimation.current === 0) {
+        if (stateSeconds.img < 0) {
+          setStateSeconds({ img: 0 });
         }
-        if (refEyes.current < 6) {
-          setStateSeconds({ seconds: stateSeconds.seconds++ });
-        } else if (refEyes.current > 7 && refEyes.current < 13) {
-          setStateSeconds({ seconds: stateSeconds.seconds-- });
-        } else if (refEyes.current > 38) {
-          refEyes.current = 0;
-          setStateSeconds({ seconds: 0 });
+        if (refRep.current <= 9) {
+          setStateSeconds({ img: stateSeconds.img++ });
+        } else if (
+          refRep.current >= 9 &&
+          refRep.current <= 19 &&
+          stateSeconds.img >= 1
+        ) {
+          setStateSeconds({ img: stateSeconds.img-- });
+        } else if (refRep.current > 38) {
+          refRep.current = 0;
+          setStateSeconds({ img: 0 });
         }
-      } else if (stateAnimation.animation === 1) {
-        if (refEyes.current !== stateSeconds.seconds) {
-          setStateSeconds({ seconds: refEyes.current });
+        refRep.current = refRep.current + 1;
+      } else if (refAnimation.current === 1) {
+        if (stateSeconds.img < 22) {
+          setStateSeconds({ img: stateSeconds.img++ });
+        }
+      } else if (refAnimation.current === 2) {
+        if (stateSeconds.img === 21) {
+          setStateSeconds({ img: 20 });
+        } else if (stateSeconds.img > 0) {
+          setStateSeconds({ img: stateSeconds.img-- });
         } else {
-          if (refEyes.current <= 21) {
-            setStateSeconds({ seconds: stateSeconds.seconds++ });
-          } else if (stateSeconds.seconds === 22) {
-            refEyes.current = 22;
-            clearInterval(interval);
-            // setStateSeconds({ seconds: 0 });
-            // setStateAnimation({ animation: 2 });
-          }
-        }
-      } else if (stateAnimation.animation === 2) {
-        if (refEyes.current <= 23 && stateSeconds.seconds >= 0) {
-          setStateSeconds({ seconds: stateSeconds.seconds-- });
-        } else if (stateSeconds.seconds < 2) {
-          refAnimation.current = 1;
-          refEyes.current = 0;
-          setStateAnimation({ animation: 0 });
+          refAnimation.current = 0;
+          setStateSeconds({ img: 0 });
         }
       }
-    }, 100);
+    }, 60);
     return () => clearInterval(interval);
-  }, [stateAnimation]);
+  }, [stateSeconds.img]);
 
   const onMouseEnter = () => {
-    if (stateAnimation.animation === 0) {
-      refAnimation.current = 0;
-      refEyes.current = 0;
-      setStateAnimation({ animation: 1 });
+    if (refAnimation.current === 0) {
+      refAnimation.current = 1;
+      refRep.current = 0;
+      setStateSeconds({ img: stateSeconds.img });
     }
   };
 
   const onMouseLeave = () => {
-    if (stateAnimation.animation === 1) {
-      refAnimation.current = 0;
-      refEyes.current = 0;
-      setStateAnimation({ animation: 2 });
-    }
+    refAnimation.current = 2;
+    refRep.current = 0;
+    setStateSeconds({ img: stateSeconds.img-- });
   };
-
   return (
     <img
       className="headimg"
       onMouseEnter={() => onMouseEnter(true)}
       onMouseLeave={() => onMouseLeave(false)}
-      src={imgsHead[stateSeconds.seconds]}
+      src={imgsHead[stateSeconds.img]}
       alt="head"
     />
   );
