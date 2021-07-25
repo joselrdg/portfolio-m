@@ -4,15 +4,15 @@ import { BorderIcon } from "../common/bordericon/BorderIcon";
 
 const icons = [
   {
-    icon: <i class="fab fa-github"></i>,
+    icon: <i className="fab fa-github"></i>,
     link: "https://github.com/joselrdg",
   },
   {
-    icon: <i class="fab fa-linkedin-in"></i>,
+    icon: <i className="fab fa-linkedin-in"></i>,
     link: "https://www.linkedin.com/in/joseluis-rodriguez-gonzalez/",
   },
   {
-    icon: <i class="fas fa-at"></i>,
+    icon: <i className="fas fa-at"></i>,
     link: "mailto:josesietepicos@gmail.com",
   },
 ];
@@ -41,8 +41,8 @@ export const Contact = () => {
         justifyContent: "center",
         marginBottom: "200px"
       }}>
-      {icons.map((icon) => (
-        <BorderIcon icon={icon.icon} link={icon.link}/>
+      {icons.map((icon, i) => (
+        <BorderIcon key={i} icon={icon.icon} link={icon.link}/>
       ))}
 
       </div>
