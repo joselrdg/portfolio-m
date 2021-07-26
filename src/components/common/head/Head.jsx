@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Head.css";
-import gif from "../../assets/head/1.gif";
+import gif from "../../assets/head/tt.gif";
 import animation1 from "../../assets/head/23.png";
 import animation2 from "../../assets/head/24.png";
 import animation3 from "../../assets/head/25.png";
@@ -48,6 +48,8 @@ const imgsHead = [
   gif,
 ];
 
+let status = 0;
+
 export const Head = () => {
   const refRep = useRef(0);
   const refAnimation = useRef(0);
@@ -61,27 +63,29 @@ export const Head = () => {
         if (stateSeconds.img < 0) {
           setStateSeconds({ img: 0 });
         }
-        if (refRep.current <= 9) {
+        if (status <= 9) {
           setStateSeconds({ img: stateSeconds.img++ });
-        } else if (
-          refRep.current >= 9 &&
-          refRep.current <= 19 &&
-          stateSeconds.img >= 1
-        ) {
+        } else if (status > 9 && status <= 19 && stateSeconds.img >= 1) {
           setStateSeconds({ img: stateSeconds.img-- });
-        } else if (refRep.current > 38) {
-          refRep.current = 0;
+        } else if (status > 60) {
+          status = 0;
           setStateSeconds({ img: 0 });
         }
-        refRep.current = refRep.current + 1;
+        status = status + 1;
       } else if (refAnimation.current === 1) {
         if (stateSeconds.img < 22) {
+          status = status + 1;
           setStateSeconds({ img: stateSeconds.img++ });
+        } else {
+          if (status < 146) {
+            status = status + 1;
+          }
         }
+        refAnimation.current = 1;
       } else if (refAnimation.current === 2) {
-        if (stateSeconds.img === 21) {
+        if (stateSeconds.img >= 21) {
           setStateSeconds({ img: 20 });
-        } else if (stateSeconds.img > 0) {
+        } else if (stateSeconds.img > 1) {
           setStateSeconds({ img: stateSeconds.img-- });
         } else {
           refAnimation.current = 0;
@@ -94,23 +98,30 @@ export const Head = () => {
 
   const onMouseEnter = () => {
     if (refAnimation.current === 0) {
+      status = 99;
       refAnimation.current = 1;
-      refRep.current = 0;
-      setStateSeconds({ img: stateSeconds.img });
     }
   };
 
-  const onMouseLeave = () => {
-    refAnimation.current = 2;
-    refRep.current = 0;
-    setStateSeconds({ img: stateSeconds.img-- });
+  const onMouseLeave = (ok) => {
+    if (refAnimation.current === 1) {
+      if (status < 140 || status > 145) {
+        status = 0;
+        refAnimation.current = 2;
+      }
+    }
+  };
+  const style = {
+    marginBottom: stateSeconds.img === 21 ? "200px" : "0px",
+    width: "30%",
   };
   return (
     <img
       className="headimg"
-      onMouseEnter={() => onMouseEnter(true)}
-      onMouseLeave={() => onMouseLeave(false)}
+      onMouseEnter={() => onMouseEnter()}
+      onMouseLeave={() => onMouseLeave()}
       src={imgsHead[stateSeconds.img]}
+      style={style}
       alt="head"
     />
   );
