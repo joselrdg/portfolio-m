@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Head.css";
-import gif from "../../assets/head/tt.gif";
+// import gif3 from "../../assets/head/tt.gif";
+import gif1 from "../../assets/head/1.gif";
+import gif2 from "../../assets/head/tf.gif";
 import animation1 from "../../assets/head/23.png";
 import animation2 from "../../assets/head/24.png";
 import animation3 from "../../assets/head/25.png";
@@ -45,9 +47,13 @@ const imgsHead = [
   head19,
   head20,
   head21,
-  gif,
+  gif1,
+  gif2,
 ];
 
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 export const Head = () => {
   const refRep = useRef(0);
@@ -64,7 +70,11 @@ export const Head = () => {
         }
         if (refRep.current <= 9) {
           setStateSeconds({ img: stateSeconds.img++ });
-        } else if (refRep.current > 9 && refRep.current <= 19 && stateSeconds.img >= 1) {
+        } else if (
+          refRep.current > 9 &&
+          refRep.current <= 19 &&
+          stateSeconds.img >= 1
+        ) {
           setStateSeconds({ img: stateSeconds.img-- });
         } else if (refRep.current > 60) {
           refRep.current = 0;
@@ -72,12 +82,14 @@ export const Head = () => {
         }
         refRep.current = refRep.current + 1;
       } else if (refAnimation.current === 1) {
-        if (stateSeconds.img < 22) {
+        if (stateSeconds.img <= 20) {
           refRep.current = refRep.current + 1;
           setStateSeconds({ img: stateSeconds.img++ });
         } else {
-          if (refRep.current < 146) {
-            refRep.current = refRep.current + 1;
+          if (refRep.current !== 89) {
+            refRep.current = 89;
+            const random = getRandomInt(21, 23);
+            setStateSeconds({ img: random });
           }
         }
         refAnimation.current = 1;
@@ -104,14 +116,13 @@ export const Head = () => {
 
   const onMouseLeave = (ok) => {
     if (refAnimation.current === 1) {
-      if (refRep.current < 140 || refRep.current > 145) {
+      // if (refRep.current < 140 || refRep.current > 145) {
         refRep.current = 0;
         refAnimation.current = 2;
-      }
+      // }
     }
   };
   const style = {
-    marginBottom: stateSeconds.img === 21 ? "200px" : "0px",
     width: "30%",
   };
   return (
