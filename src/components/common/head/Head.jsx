@@ -48,7 +48,6 @@ const imgsHead = [
   gif,
 ];
 
-let status = 0;
 
 export const Head = () => {
   const refRep = useRef(0);
@@ -63,22 +62,22 @@ export const Head = () => {
         if (stateSeconds.img < 0) {
           setStateSeconds({ img: 0 });
         }
-        if (status <= 9) {
+        if (refRep.current <= 9) {
           setStateSeconds({ img: stateSeconds.img++ });
-        } else if (status > 9 && status <= 19 && stateSeconds.img >= 1) {
+        } else if (refRep.current > 9 && refRep.current <= 19 && stateSeconds.img >= 1) {
           setStateSeconds({ img: stateSeconds.img-- });
-        } else if (status > 60) {
-          status = 0;
+        } else if (refRep.current > 60) {
+          refRep.current = 0;
           setStateSeconds({ img: 0 });
         }
-        status = status + 1;
+        refRep.current = refRep.current + 1;
       } else if (refAnimation.current === 1) {
         if (stateSeconds.img < 22) {
-          status = status + 1;
+          refRep.current = refRep.current + 1;
           setStateSeconds({ img: stateSeconds.img++ });
         } else {
-          if (status < 146) {
-            status = status + 1;
+          if (refRep.current < 146) {
+            refRep.current = refRep.current + 1;
           }
         }
         refAnimation.current = 1;
@@ -98,15 +97,15 @@ export const Head = () => {
 
   const onMouseEnter = () => {
     if (refAnimation.current === 0) {
-      status = 99;
+      refRep.current = 99;
       refAnimation.current = 1;
     }
   };
 
   const onMouseLeave = (ok) => {
     if (refAnimation.current === 1) {
-      if (status < 140 || status > 145) {
-        status = 0;
+      if (refRep.current < 140 || refRep.current > 145) {
+        refRep.current = 0;
         refAnimation.current = 2;
       }
     }
