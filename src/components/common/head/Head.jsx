@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Head.css";
-import gif from "../../assets/head/1.gif";
+import gif from "../../assets/head/tt.gif";
 import animation1 from "../../assets/head/23.png";
 import animation2 from "../../assets/head/24.png";
 import animation3 from "../../assets/head/25.png";
@@ -64,12 +64,12 @@ export const Head = () => {
         if (refRep.current <= 9) {
           setStateSeconds({ img: stateSeconds.img++ });
         } else if (
-          refRep.current >= 9 &&
+          refRep.current > 9 &&
           refRep.current <= 19 &&
           stateSeconds.img >= 1
         ) {
           setStateSeconds({ img: stateSeconds.img-- });
-        } else if (refRep.current > 38) {
+        } else if (refRep.current > 60) {
           refRep.current = 0;
           setStateSeconds({ img: 0 });
         }
@@ -101,16 +101,23 @@ export const Head = () => {
   };
 
   const onMouseLeave = () => {
-    refAnimation.current = 2;
-    refRep.current = 0;
-    setStateSeconds({ img: stateSeconds.img-- });
+    if (refAnimation.current === 1) {
+      refAnimation.current = 2;
+      refRep.current = 0;
+      setStateSeconds({ img: stateSeconds.img-- });
+    }
   };
+  const style = {
+    marginBottom: stateSeconds.img === 21 ? '200px' : '0px',
+    width: '30%',
+  }
   return (
     <img
       className="headimg"
       onMouseEnter={() => onMouseEnter(true)}
       onMouseLeave={() => onMouseLeave(false)}
       src={imgsHead[stateSeconds.img]}
+      style={style}
       alt="head"
     />
   );
