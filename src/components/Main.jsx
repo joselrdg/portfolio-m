@@ -1,5 +1,6 @@
 import "./Main.css";
 import React, {
+  useCallback,
   // useCallback,
   useEffect,
   useRef,
@@ -15,6 +16,7 @@ import { SectionOne } from "./sectionone/SectionOne";
 import { SectionTwo } from "./sectionone/SectionTwo";
 import { SectionThree } from "./sectionone/SectionThree";
 import { Contact } from "./sectionone/Contact";
+import { useSpring } from "react-spring";
 
 // const d = document.getElementById("game");
 
@@ -23,7 +25,7 @@ import { Contact } from "./sectionone/Contact";
     base: { }
   }
 export const Main = () => {
-  // const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
+  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
   const parallax = useRef();
 
   useEffect(() => {
@@ -35,22 +37,21 @@ export const Main = () => {
   //     set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }),
   //   []
   // );
-  // const onScroll = useCallback((e) => set({ st: e.target.scrollTop / 30 }), []);
+  const onScroll = useCallback((e) => set({ st: e.target.scrollTop / 30 }), [set]);
 
   // const hidecanvas = () => {
   //   d.style.display = d.style.display == "none" ? "block" : "none";
   // };
-
+console.log(st)
   return (
     <div
       style={{ width: "100%", height: "100%", background: "#253237" }}
       // onMouseMove={onMove}
-      // onScroll={onScroll}
     >
       <Parallax ref={parallax} pages={5}>
         <ParallaxLayer
           offset={5}
-          speed={-2}
+          speed={-5}
           style={{ backgroundColor: "#000000" }}
         />
         <ParallaxLayer
@@ -66,7 +67,7 @@ export const Main = () => {
         <ParallaxLayer
           offset={0}
           speed={-0.8}
-          style={{ pointerEvents: "none" }}
+          style={{ pointerEvents: "none", opacity: "0.5" }}
         >
           <SectionOne />
         </ParallaxLayer>
