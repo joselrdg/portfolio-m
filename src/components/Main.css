@@ -36,3 +36,15 @@
  bottom: 0px;
  /* top: -90vh; */
 }
+
+.basecityI {
+
+
+}
+
+@media only screen and (max-width: 432px) {
+  .basecityI {
+    position: relative;
+    right: 100px;
+  }
+}
