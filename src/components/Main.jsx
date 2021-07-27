@@ -19,7 +19,9 @@ import { Contact } from "./sectionone/Contact";
 // const d = document.getElementById("game");
 
 // Fonts: lasenter  clipneon  moon
-
+  const styleSectionOne = {
+    base: { }
+  }
 export const Main = () => {
   // const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
   const parallax = useRef();
@@ -38,6 +40,7 @@ export const Main = () => {
   // const hidecanvas = () => {
   //   d.style.display = d.style.display == "none" ? "block" : "none";
   // };
+
   return (
     <div
       style={{ width: "100%", height: "100%", background: "#253237" }}
@@ -70,7 +73,7 @@ export const Main = () => {
 
         <ParallaxLayer
           offset={1 - 0.04}
-          speed={0.6}
+          speed={0.1}
           factor={1}
           style={{ pointerEvents: "none" }}
         >
@@ -103,7 +106,7 @@ export const Main = () => {
           factor={3}
           onClick={() => parallax.current.scrollTo(2)}
         >
-          <img src={basecity} style={{ position: "center" }} alt="futuristic city" />
+          <img src={basecity} className="basecityI" alt="futuristic city" />
         </ParallaxLayer>
 
 
