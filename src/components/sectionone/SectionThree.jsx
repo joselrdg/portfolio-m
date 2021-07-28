@@ -14,7 +14,7 @@ export const SectionThree = ({ parallax }) => {
   return (
     <>
       <ParallaxLayer
-        offset={3}
+        offset={3.4}
         speed={-0.1}
         style={{
           display: "flex",

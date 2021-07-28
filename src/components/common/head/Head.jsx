@@ -122,16 +122,16 @@ export const Head = () => {
       // }
     }
   };
-  const style = {
-    width: "30%",
-  };
+  // const style = {
+  //   width: "30%",
+  // };
   return (
     <img
       className="headimg"
       onMouseEnter={() => onMouseEnter()}
       onMouseLeave={() => onMouseLeave()}
       src={imgsHead[stateSeconds.img]}
-      style={style}
+      // style={style}
       alt="head"
     />
   );
