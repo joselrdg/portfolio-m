@@ -1,13 +1,21 @@
 import "./SectionOne.css";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { TextNeon } from "../common/textneon/TextNeon";
+import useOnScreen from "../hooks/useOnScreen";
 
 // Fonts: lasenter  clipneon  moon
 
-export const SectionOne = () => {
+export const SectionOne = ({scrollRef}) => {
+  const ref = useRef();
+  const onScreen = useOnScreen(ref, "-100px");
+
+  useEffect(() => {
+  console.log(onScreen)
+  }, [onScreen])
+
   return (
-      <div className="sectionOne _flex _fd_col_r _ai_center _jc_center">
+      <div className="sectionOne _flex _fd_col_r _ai_center _jc_center"  ref={ref} style={{  opacity: onScreen ? 0.1 : 1 }}>
         {/* <TextNeon text={`< JL R />`} font="moon" size={4} />*/}
         {/* <img src={azotea} alt="azotea" className="imgazotea" />  */}
         <div className="cartel _flex _fd_col _ai_center _jc_center">

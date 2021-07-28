@@ -13,7 +13,7 @@ function App() {
 
   return (
       
-      <div onScroll={console.log('onscroll')}>
+      <div>
       <Suspense fallback={<h1>Loading SectionOne...</h1>}>
         <Main />
       </Suspense>

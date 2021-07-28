@@ -4,6 +4,7 @@ import React, {
   // useCallback,
   useEffect,
   useRef,
+  useState,
 } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 // import { useSpring, animated as a, interpolate } from "react-spring";
@@ -17,38 +18,27 @@ import { SectionTwo } from "./sectionone/SectionTwo";
 import { SectionThree } from "./sectionone/SectionThree";
 import { Contact } from "./sectionone/Contact";
 import { useSpring } from "react-spring";
+import useOnScreen from "./hooks/useOnScreen";
 
 // const d = document.getElementById("game");
 
 // Fonts: lasenter  clipneon  moon
-  const styleSectionOne = {
-    base: { }
-  }
+
+
+
 export const Main = () => {
-  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }));
   const parallax = useRef();
-
-  useEffect(() => {
-    // d.style.display = d.style.display === "none" ? "block" : "none";
-  }, []);
-
-  // const onMove = useCallback(
-  //   ({ clientX: x, clientY: y }) =>
-  //     set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] }),
-  //   []
-  // );
-  const onScroll = useCallback((e) => set({ st: e.target.scrollTop / 30 }), [set]);
+ 
 
   // const hidecanvas = () => {
   //   d.style.display = d.style.display == "none" ? "block" : "none";
   // };
-console.log(st)
   return (
     <div
       style={{ width: "100%", height: "100%", background: "#253237" }}
       // onMouseMove={onMove}
     >
-      <Parallax ref={parallax} pages={5}>
+      <Parallax ref={parallax} pages={5} className="my-class-name">
         <ParallaxLayer
           offset={5}
           speed={-5}
@@ -67,9 +57,8 @@ console.log(st)
         <ParallaxLayer
           offset={0}
           speed={-0.8}
-          style={{ pointerEvents: "none", opacity: "0.5" }}
         >
-          <SectionOne />
+            <SectionOne />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -78,7 +67,11 @@ console.log(st)
           factor={1}
           style={{ pointerEvents: "none" }}
         >
-          <img src={fondbaseb} style={{ width: "100%" }}  alt="futuristic city"/>
+          <img
+            src={fondbaseb}
+            style={{ width: "100%" }}
+            alt="futuristic city"
+          />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -87,7 +80,11 @@ console.log(st)
           factor={1}
           style={{ pointerEvents: "none" }}
         >
-          <img src={fondbasebd} style={{ width: "100%" }}  alt="futuristic city"/>
+          <img
+            src={fondbasebd}
+            style={{ width: "100%" }}
+            alt="futuristic city"
+          />
         </ParallaxLayer>
         <ParallaxLayer
           offset={1 - 0.01}
@@ -98,7 +95,7 @@ console.log(st)
             float: "right",
           }}
         >
-          <img src={basecityd}  alt="futuristic city"/>
+          <img src={basecityd} alt="futuristic city" />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -110,7 +107,6 @@ console.log(st)
           <img src={basecity} className="basecityI" alt="futuristic city" />
         </ParallaxLayer>
 
-
         <ParallaxLayer
           offset={1.8}
           speed={-0.2}
@@ -118,7 +114,7 @@ console.log(st)
           style={{
             backgroundColor: "#000000",
           }}
-       />
+        />
         <SectionTwo />
         <SectionThree />
         <Contact />
