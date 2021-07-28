@@ -1,10 +1,7 @@
 import "./Main.css";
 import React, {
-  useCallback,
   // useCallback,
-  useEffect,
   useRef,
-  useState,
 } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 // import { useSpring, animated as a, interpolate } from "react-spring";
@@ -17,8 +14,6 @@ import { SectionOne } from "./sectionone/SectionOne";
 import { SectionTwo } from "./sectionone/SectionTwo";
 import { SectionThree } from "./sectionone/SectionThree";
 import { Contact } from "./sectionone/Contact";
-import { useSpring } from "react-spring";
-import useOnScreen from "./hooks/useOnScreen";
 
 // const d = document.getElementById("game");
 
@@ -40,9 +35,9 @@ export const Main = () => {
     >
       <Parallax ref={parallax} pages={5} className="my-class-name">
         <ParallaxLayer
-          offset={5}
-          speed={-5}
-          style={{ backgroundColor: "#000000" }}
+          offset={3}
+          speed={1}
+          style={{ backgroundColor: "black" }}
         />
         <ParallaxLayer
           offset={0}
@@ -60,6 +55,11 @@ export const Main = () => {
         >
             <SectionOne />
         </ParallaxLayer>
+        <ParallaxLayer
+          offset={3}
+          speed={0}
+          style={{ backgroundColor: "black" }}
+        />
 
         <ParallaxLayer
           offset={1 - 0.04}

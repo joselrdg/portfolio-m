@@ -5,7 +5,6 @@ import { EyesInterval } from "../common/Eyes/EyesInterval";
 import { Head } from "../common/head/Head";
 import GlitchClip from "react-glitch-effect/core/GlitchClip";
 import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";
-import { SectionOneH } from "./SectionOneH";
 
 export const SectionTwo = () => {
   return (

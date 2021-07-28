@@ -1,6 +1,5 @@
 import { ParallaxLayer } from '@react-spring/parallax'
 import React from 'react'
-import { Head } from '../common/head/Head'
 
 export const SectionOneH = () => {
     return (
