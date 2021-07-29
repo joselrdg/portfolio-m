@@ -19,6 +19,8 @@ import { Contact } from "./sectionone/Contact";
 
 // Fonts: lasenter  clipneon  moon
 
+const url = (name, wrap = false) =>
+  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 
 
 export const Main = () => {
@@ -37,7 +39,7 @@ export const Main = () => {
         <ParallaxLayer
           offset={3}
           speed={1}
-          style={{ backgroundColor: "black" }}
+          // style={{ backgroundColor: "black" }}
         />
         <ParallaxLayer
           offset={0}
@@ -55,6 +57,8 @@ export const Main = () => {
         >
             <SectionOne />
         </ParallaxLayer>
+       
+
         <ParallaxLayer
           offset={3}
           speed={0}
@@ -115,8 +119,42 @@ export const Main = () => {
             backgroundColor: "#000000",
           }}
         />
-        <SectionTwo />
+ <SectionTwo />
+
+<ParallaxLayer offset={3.3} speed={-0.3} style={{ pointerEvents: 'none' }}>
+          <i className="fab fa-css3-alt icons_sectionthree" style={{ fontSize: '100px', marginLeft: '70%'}} ></i>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={3} speed={0.8} style={{ opacity: 0.1 }}>
+        <i className="fab fa-html5 icons_sectionthree" style={{ fontSize: '100px', display: 'block', marginLeft: '55%'}} ></i>
+        <i className="fab fa-html5 icons_sectionthree" style={{ fontSize: '100px', display: 'block', marginLeft: '15%'}} ></i>
+        </ParallaxLayer>
+        <i class="fab fa-html5"></i>
+
+        <ParallaxLayer offset={3.75} speed={0.5} style={{ opacity: 0.1 }}>
+        <i className="fab fa-react icons_sectionthree" style={{ fontSize: '100px', display: 'block', marginLeft: '70%'}} ></i>
+        <i className="fab fa-react icons_sectionthree" style={{ fontSize: '100px', display: 'block', marginLeft: '40%'}} ></i>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={3} speed={0.2} style={{ opacity: 0.2 }}>
+        <i className="fab fa-angular icons_sectionthree" style={{ fontSize: '100px', display: 'block', marginLeft: '10%'}} ></i>
+        <i className="fab fa-angular icons_sectionthree" style={{ fontSize: '100px', display: 'block', marginLeft: '75%'}} ></i>
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={4.6} speed={-0.1} style={{ opacity: 0.4 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '60%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '25%', marginLeft: '30%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '10%', marginLeft: '80%' }} />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={4.6} speed={0.4} style={{ opacity: 0.6 }}>
+          <img src={url('cloud')} style={{ display: 'block', width: '20%', marginLeft: '5%' }} />
+          <img src={url('cloud')} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
+        </ParallaxLayer>
+
         <SectionThree />
+
+       
         <Contact />
       </Parallax>
     </div>

@@ -16,14 +16,18 @@
   height: 100vh;
 } */
 
+.icons_sectionthree {
+  color: #0575e6;
+}
+
 .cartel {
   background-color: #00000050;
   border-radius: 20px;
   border: 1px solid #913d8b;
   box-shadow: -0.1vw 0vw 0.2vw #a9ffdc, -0.2vw 0vw 0.25vw #a9ffdc,
-    -0.1vw 0vw 0.2vw #a9ffdc, -0.1vw 0vw 0.1vw #00cccc,
-    -0.1vw 0vw 0.1vw #00cccc, -0.1vw 0vw 0.1vw #00cccc, -0.1vw 0vw 0.3vw #00cccc,
-    -0.1vw 0vw 0.8vw #00cccc, -0.1vw 0vw 0.8vw #00cccc, 0.1vw 0vw 0.3vw #00cccc;
+    -0.1vw 0vw 0.2vw #a9ffdc, -0.1vw 0vw 0.1vw #00cccc, -0.1vw 0vw 0.1vw #00cccc,
+    -0.1vw 0vw 0.1vw #00cccc, -0.1vw 0vw 0.3vw #00cccc, -0.1vw 0vw 0.8vw #00cccc,
+    -0.1vw 0vw 0.8vw #00cccc, 0.1vw 0vw 0.3vw #00cccc;
   padding: 0px 2% 0px 2%;
 }
 
@@ -32,14 +36,12 @@
 
 .estructure {
   width: 100vw;
- position: relative;
- bottom: 0px;
- /* top: -90vh; */
+  position: relative;
+  bottom: 0px;
+  /* top: -90vh; */
 }
 
 .basecityI {
-
-
 }
 
 @media only screen and (max-width: 432px) {
