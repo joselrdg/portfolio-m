@@ -27,12 +27,12 @@ export const SectionTwo = () => {
 
         {/* <div className="contain-section-two"> */}
           <div className="title titleMirror gradient-border">
-            <GlitchSquiggly onHover={true}>
+            <GlitchSquiggly >
               <h1 className="title-text-stwo">
                 LOOKING FOR A
               </h1>
             </GlitchSquiggly>
-            <GlitchSquiggly onHover={true}>
+            <GlitchSquiggly >
               <h1 className="title-text-stwo">
                 WEB DEVELOPER?
               </h1>

@@ -1,8 +1,11 @@
 
+
+
 .icons_sectionthree {
+  
+  /* border-radius: 50%; */
     background: -webkit-linear-gradient(45deg, #ff003c, #0575e6);
-    border-radius: 50%;
-    
-    text-align: center;
-    padding: 10px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
   }
