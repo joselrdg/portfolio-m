@@ -17,8 +17,13 @@
 } */
 
 .icons_sectionthree {
-  color: #0575e6;
+  background: -webkit-linear-gradient(45deg, #ff003c, #0575e6);
+  border-radius: 50%;
+  
+  text-align: center;
+  padding: 10px;
 }
+
 
 .cartel {
   background-color: #00000050;
