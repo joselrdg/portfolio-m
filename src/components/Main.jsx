@@ -14,11 +14,14 @@ import { SectionOne } from "./sectionone/SectionOne";
 import { SectionTwo } from "./sectionone/SectionTwo";
 import { SectionThree } from "./sectionone/SectionThree";
 import { Contact } from "./sectionone/Contact";
+import { IconsSection } from "./sectionone/IconsSection";
 
 // const d = document.getElementById("game");
 
 // Fonts: lasenter  clipneon  moon
 
+const url = (name, wrap = false) =>
+  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 
 
 export const Main = () => {
@@ -37,7 +40,7 @@ export const Main = () => {
         <ParallaxLayer
           offset={3}
           speed={1}
-          style={{ backgroundColor: "black" }}
+          // style={{ backgroundColor: "black" }}
         />
         <ParallaxLayer
           offset={0}
@@ -55,6 +58,8 @@ export const Main = () => {
         >
             <SectionOne />
         </ParallaxLayer>
+       
+
         <ParallaxLayer
           offset={3}
           speed={0}
@@ -115,8 +120,14 @@ export const Main = () => {
             backgroundColor: "#000000",
           }}
         />
-        <SectionTwo />
+ <SectionTwo />
+
+ <IconsSection/>
+
+       
         <SectionThree />
+
+       
         <Contact />
       </Parallax>
     </div>

@@ -7,7 +7,7 @@ export const SectionOneH = () => {
         offset={3}
         speed={0.1}
         style={{
-            backgroundColor: 'black',
+            // backgroundColor: 'black',
         }}
       >
       </ParallaxLayer>

@@ -21,7 +21,7 @@ export const SectionThree = ({ parallax }) => {
           flexDirection: "row",
           // alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "black",
+          // backgroundColor: "black",
           backgroundImage: "url(cartelx.gif)",
           backgroundPosition: "center 0%",
           backgroundSize: "contain",
