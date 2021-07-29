@@ -40,6 +40,7 @@
     -webkit-transform: scale(2.2);
     color: #ff003c;
     background: -webkit-linear-gradient(45deg, #ff003c, #0575E6);
+    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 265ms ease-in;
