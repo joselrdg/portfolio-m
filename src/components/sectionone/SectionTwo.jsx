@@ -28,17 +28,17 @@ export const SectionTwo = () => {
         {/* <div className="contain-section-two"> */}
           <div className="title titleMirror gradient-border">
             <GlitchSquiggly onHover={true}>
-              <h1 className="bkg-text-stwo" style={{ margin: 0, padding: 0 }}>
+              <h1 className="title-text-stwo">
                 LOOKING FOR A
               </h1>
             </GlitchSquiggly>
             <GlitchSquiggly onHover={true}>
-              <h1 className="bkg-text-stwo" style={{ margin: 0, padding: 0 }}>
+              <h1 className="title-text-stwo">
                 WEB DEVELOPER?
               </h1>
             </GlitchSquiggly>
             <GlitchClip onHover={true}>
-              <h3 className="bkg-text-stwo">
+              <h3 className="bkg-text-stwo" >
                 Hey, I'm José Luis Rodríguez ; )
               </h3>
               <h3 className="bkg-text-stwo">

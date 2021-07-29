@@ -21,12 +21,14 @@ import { IconsSection } from "./sectionone/IconsSection";
 // Fonts: lasenter  clipneon  moon
 
 const url = (name, wrap = false) =>
-  `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
-
+  `${
+    wrap ? "url(" : ""
+  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ")" : ""
+  }`;
 
 export const Main = () => {
   const parallax = useRef();
- 
 
   // const hidecanvas = () => {
   //   d.style.display = d.style.display == "none" ? "block" : "none";
@@ -52,13 +54,12 @@ export const Main = () => {
             backgroundSize: "cover",
           }}
         />
-        <ParallaxLayer
-          offset={0}
-          speed={-0.8}
-        >
-            <SectionOne />
+        
+        <ParallaxLayer offset={0} speed={-0.8}>
+          
+          <SectionOne />
+
         </ParallaxLayer>
-       
 
         <ParallaxLayer
           offset={3}
@@ -120,14 +121,12 @@ export const Main = () => {
             backgroundColor: "#000000",
           }}
         />
- <SectionTwo />
+        <SectionTwo />
 
- <IconsSection/>
+        <IconsSection />
 
-       
         <SectionThree />
 
-       
         <Contact />
       </Parallax>
     </div>

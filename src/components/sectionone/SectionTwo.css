@@ -74,8 +74,16 @@
   animation: shake 0.5s linear forwards;
 }
 
+.title-text-stwo {
+  max-width: 470px;
+  margin: 0 20px;
+  padding:0
+  }
+
 .bkg-text-stwo {
-max-width: 450px;
+max-width: 470px;
+margin: 20px;
+padding:0
 }
 
 .shake:hover {
