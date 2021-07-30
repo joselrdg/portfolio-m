@@ -15,6 +15,7 @@ import { SectionTwo } from "./sectionone/SectionTwo";
 import { SectionThree } from "./sectionone/SectionThree";
 import { Contact } from "./sectionone/Contact";
 import { IconsSection } from "./sectionone/IconsSection";
+import { ChangeIcons } from "./sectionone/ChangeIcons";
 
 // const d = document.getElementById("game");
 
@@ -54,11 +55,9 @@ export const Main = () => {
             backgroundSize: "cover",
           }}
         />
-        
-        <ParallaxLayer offset={0} speed={-0.8}>
-          
-          <SectionOne />
 
+        <ParallaxLayer offset={0} speed={-0.8}>
+          <SectionOne />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -121,12 +120,11 @@ export const Main = () => {
             backgroundColor: "#000000",
           }}
         />
-        <IconsSection section={2}/>
 
-
+        
         <SectionTwo />
 
-        <IconsSection section={3}/>
+       
 
         <SectionThree />
 
