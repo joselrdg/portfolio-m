@@ -121,9 +121,12 @@ export const Main = () => {
             backgroundColor: "#000000",
           }}
         />
+        <IconsSection section={2}/>
+
+
         <SectionTwo />
 
-        <IconsSection />
+        <IconsSection section={3}/>
 
         <SectionThree />
 

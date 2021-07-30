@@ -8,7 +8,7 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export const IconsSection = () => {
+export const IconsSection = ({section}) => {
   const inconsRand = () => {
     const items = icons.map((e, i) => {
       const r = randomInt(30, 150);
@@ -30,17 +30,18 @@ export const IconsSection = () => {
     });
     return items;
   };
+  
   return (
     <>
       {/* <ParallaxLayer offset={3.3} speed={-0.3} style={{ pointerEvents: 'none', opacity: 0.7 }}>
           <i className="fas fa-code icons_sectionthree" style={{ fontSize: '80px', display: 'block', width: '100px', marginLeft: '70%'}} ></i>
         </ParallaxLayer> */}
 
-      <ParallaxLayer offset={3} speed={0.8}>
+      <ParallaxLayer offset={section} speed={0.8}>
         {inconsRand()}
       </ParallaxLayer>
 
-      <ParallaxLayer offset={3.75} speed={0.5}>
+      <ParallaxLayer offset={section + .75} speed={0.5}>
         {inconsRand()}
       </ParallaxLayer>
 
@@ -52,7 +53,7 @@ export const IconsSection = () => {
         {inconsRand()}
       </ParallaxLayer> */}
 
-      {/* <ParallaxLayer offset={3.8} speed={0.4}>
+      {/* <ParallaxLayer offset={section + .8} speed={0.4}>
         {inconsRand()}
       </ParallaxLayer> */}
     </>
