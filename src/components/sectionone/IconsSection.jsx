@@ -1,19 +1,42 @@
 import { ParallaxLayer } from "@react-spring/parallax";
-import React from "react";
+import React, { useState } from "react";
 import "./IconsSection.css";
 
-const icons = ["html5", "npm", "react", "angular", "sass", "yarn", "node-js", "js-square"];
+const icons = [
+  "html5",
+  "npm",
+  "react",
+  "angular",
+  "sass",
+  "yarn",
+  "node-js",
+  "js-square",
+];
+
+const urlGif = [
+  "https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif",
+  "https://i.gifer.com/GlIU.gif",
+  "https://i.gifer.com/4HV2.gif",
+  "https://i.gifer.com/7Gt8.gif",
+  "https://i.gifer.com/7tD0.gif",
+  "https://i.gifer.com/h4I.gif",
+  "https://i.gifer.com/81O8.gif",
+];
 
 function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export const IconsSection = ({section}) => {
+
+
+export const IconsSection = ({ section, numGif }) => {
+
   const inconsRand = () => {
     const items = icons.map((e, i) => {
-      const r = randomInt(30, 150);
-      const opacity = randomInt(1, 10);
+      const r = randomInt(50, 120);
+      const opacity = randomInt(6, 11);
       const margin = randomInt(10, 90);
+      const gif = randomInt(0, urlGif.length);
       return (
         <i
           key={i}
@@ -23,39 +46,24 @@ export const IconsSection = ({section}) => {
             opacity: `0.${opacity}`,
             display: "block",
             width: `${r}px`,
+            padding: "20px",
             marginLeft: `${margin}%`,
+            backgroundImage: numGif === 'random' ? `url(${urlGif[gif]})` : `url(${numGif})`,
+            // backgroundImage: `url(${numGif})`,
           }}
         />
       );
     });
     return items;
   };
-  
+
   return (
     <>
-      {/* <ParallaxLayer offset={3.3} speed={-0.3} style={{ pointerEvents: 'none', opacity: 0.7 }}>
-          <i className="fas fa-code icons_sectionthree" style={{ fontSize: '80px', display: 'block', width: '100px', marginLeft: '70%'}} ></i>
-        </ParallaxLayer> */}
-
-      <ParallaxLayer offset={section} speed={0.8}>
-        {inconsRand()}
-      </ParallaxLayer>
-
-      <ParallaxLayer offset={section + .75} speed={0.5}>
-        {inconsRand()}
-      </ParallaxLayer>
-
-      {/* <ParallaxLayer offset={3} speed={0.2}>
-        {inconsRand()}
-      </ParallaxLayer> */}
-
-      {/* <ParallaxLayer offset={3.6} speed={-0.1}>
-        {inconsRand()}
-      </ParallaxLayer> */}
-
-      {/* <ParallaxLayer offset={section + .8} speed={0.4}>
-        {inconsRand()}
-      </ParallaxLayer> */}
+      {section.map((item) => (
+        <ParallaxLayer offset={item.offset} speed={item.speed}>
+            {inconsRand()}
+        </ParallaxLayer>
+      ))}
     </>
   );
 };
