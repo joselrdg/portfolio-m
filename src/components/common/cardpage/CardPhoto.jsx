@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSprings, animated, to as interpolate } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import "./CardPhoto.css";
-import { PROJECTS } from "../../sectionone/CONSTANTS.js";
+import { PROJECTS } from "../../sections/CONSTANTS.js";
 import githubmark from "../../assets/githubmark/GitHubLight32px.png";
 import playmark from "../../assets/githubmark/play.png";
 

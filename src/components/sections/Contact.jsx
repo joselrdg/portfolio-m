@@ -12,6 +12,10 @@ const icons = [
     link: "https://www.linkedin.com/in/joseluis-rodriguez-gonzalez/",
   },
   {
+    icon: <i class="fas fa-code-branch"></i>,
+    link: "https://stackshare.io/joselrdg/my-stack",
+  },
+  {
     icon: <i className="fas fa-at"></i>,
     link: "mailto:josesietepicos@gmail.com",
   },

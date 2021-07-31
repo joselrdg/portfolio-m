@@ -10,12 +10,12 @@ import basecity from "./assets/imgcity/base.png";
 import basecityd from "./assets/imgcity/based.png";
 import fondbaseb from "./assets/imgcity/fondbaseb.png";
 import fondbasebd from "./assets/imgcity/fondbasebd.png";
-import { SectionOne } from "./sectionone/SectionOne";
-import { SectionTwo } from "./sectionone/SectionTwo";
-import { SectionThree } from "./sectionone/SectionThree";
-import { Contact } from "./sectionone/Contact";
-import { IconsSection } from "./sectionone/IconsSection";
-import { ChangeIcons } from "./sectionone/ChangeIcons";
+import { SectionOne } from "./sections/SectionOne";
+import { SectionTwo } from "./sections/SectionTwo";
+import { SectionThree } from "./sections/SectionThree";
+import { Contact } from "./sections/Contact";
+import { IconsSection } from "./sections/IconsSection";
+import { ChangeIcons } from "./sections/ChangeIcons";
 
 // const d = document.getElementById("game");
 
