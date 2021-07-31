@@ -34,14 +34,11 @@ export const IconsSection = ({ section, numGif }) => {
   const inconsRand = () => {
     const items = icons.map((e, i) => {
       const r = randomInt(50, 120);
-      const opacity = randomInt(6, 11);
+      const opacity = randomInt(7, 11);
       const margin = randomInt(10, 90);
       const gif = randomInt(0, urlGif.length);
-      return (
-        <i
-          key={i}
-          className={`fab fa-${e} icons_sectionthree`}
-          style={{
+      const color = randomInt(0, 10)
+      const styleImage = {
             fontSize: `${r}px`,
             opacity: `0.${opacity}`,
             display: "block",
@@ -50,7 +47,23 @@ export const IconsSection = ({ section, numGif }) => {
             marginLeft: `${margin}%`,
             backgroundImage: numGif === 'random' ? `url(${urlGif[gif]})` : `url(${numGif})`,
             // backgroundImage: `url(${numGif})`,
-          }}
+          }
+          const styleColor = 
+            {
+              fontSize: `${r}px`,
+              opacity: `0.${opacity}`,
+              display: "block",
+              width: `${r}px`,
+              padding: "20px",
+              marginLeft: `${margin}%`,            
+          }
+      return (
+        <i
+          key={i}
+          className={`fab fa-${e} icons_sectionthree`}
+          style={
+            color < 6 ? styleImage : styleColor
+          }
         />
       );
     });
