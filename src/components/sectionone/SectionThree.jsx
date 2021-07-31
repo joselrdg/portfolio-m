@@ -29,7 +29,7 @@ export const SectionThree = () => {
 
   return (
     <>
-      <ChangeIcons numGif={urlGif[state]} />
+      {/* <ChangeIcons numGif={urlGif[state]} /> */}
 
       <ParallaxLayer
         offset={3.4}
@@ -67,7 +67,7 @@ export const SectionThree = () => {
         }}
       >
         <CardPhoto />
-        <button
+        {/* <button
           onClick={changeColor}
           className="fill"
           style={{
@@ -79,7 +79,7 @@ export const SectionThree = () => {
           }}
         >
           Click Me!
-        </button>
+        </button> */}
       </ParallaxLayer>
     </>
   );

@@ -121,9 +121,16 @@ export const Main = () => {
           }}
         />
 
+        <IconsSection section={[{ offset: 2.75, speed: 0.7 }]} numGif='random'/>
         
         <SectionTwo />
-
+      <IconsSection
+        section={[
+          { offset: 3, speed: 0.5 },
+          { offset: 3.75, speed: 1 },
+        ]}
+        numGif='random'
+      />
        
 
         <SectionThree />
