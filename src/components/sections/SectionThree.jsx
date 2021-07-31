@@ -7,30 +7,10 @@ import { ChangeIcons } from "./ChangeIcons";
 
 // const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
-const urlGif = [
-  "random",
-  "https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif",
-  "https://i.gifer.com/GlIU.gif",
-  // "https://i.gifer.com/4HV2.gif",
-  "https://i.gifer.com/7Gt8.gif",
-  "https://i.gifer.com/7tD0.gif",
-  "https://i.gifer.com/81O8.gif",
-  "https://i.gifer.com/h4I.gif",
-  'https://i.gifer.com/QNWp.gif'
-];
 
 export const SectionThree = () => {
-  const [state, setstate] = useState(0);
-
-  const changeColor = () => {
-    setstate(state < urlGif.length - 1 ? state + 1 : 0);
-    console.log(state);
-  };
-
   return (
     <>
-      {/* <ChangeIcons numGif={urlGif[state]} /> */}
-
       <ParallaxLayer
         offset={3.4}
         speed={-0.1}
@@ -42,7 +22,6 @@ export const SectionThree = () => {
       >
         <div className="card-proyects-container">
           <GlitchSquiggly
-            onHover={true}
             style={{ margin: "60px 20px", padding: 0 }}
           >
             <h1
@@ -61,25 +40,10 @@ export const SectionThree = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          // alignItems: "center",
           justifyContent: "end",
-          // backgroundColor: "black",
         }}
       >
         <CardPhoto />
-        {/* <button
-          onClick={changeColor}
-          className="fill"
-          style={{
-            margin: "100px",
-            height: "40px",
-            backgroundImage: `url(${
-              urlGif[state] === "random" ? urlGif[5] : urlGif[state]
-            })`,
-          }}
-        >
-          Click Me!
-        </button> */}
       </ParallaxLayer>
     </>
   );
