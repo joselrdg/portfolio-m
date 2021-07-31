@@ -25,7 +25,7 @@ export const PROJECTS = [
     },
     {
         image: '/projects/canvas.png',
-        title: 'GO TO HELL WITH...CANVAS!!!',
+        title: 'GO TO HELL WITH CANVAS!!!',
         subtitle: 'Video game made in JavaScript Vanilla.',
         resume: null,
         github: 'https://github.com/joselrdg/project-game',
