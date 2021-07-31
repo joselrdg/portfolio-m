@@ -39,6 +39,11 @@
 .marg {
   margin: 40px
 }
+
+.border-gradient {
+}
+.border-gradient-purple {
+}
 .fill {
   color: #fff;
   text-decoration:none;
@@ -47,7 +52,11 @@
   padding: 13px 50px 13px;
   outline: 0;
   /* text-shadow: 0 0 0.15em #1da9cc; */
-  border: 1px solid rgb(118, 243, 252);
+  /* border: 1px solid rgb(118, 243, 252); */
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(to left, #d53a9d, #743ad5);
   cursor: pointer;
   position: relative;
   /* background-color: rgba(207, 38, 38, 0); */
@@ -55,7 +64,7 @@
 
 .fill::after {
   content: "";
-  background-color: #1da9cc;
+  background: -webkit-linear-gradient(45deg, #d53a9d, #0575e6);
   width: 100%;
   z-index: -1;
   position: absolute;
