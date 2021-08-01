@@ -1,8 +1,18 @@
 import './ContactForm.css';
 
-import React from 'react'
+import React, { useState } from 'react'
+
+import { postFormContact } from "../../../services/FormService";
+
 
 export const ContactForm = ({set}) => {
+
+  const [state, setstate] = useState({name: 'José Luis Rodríguez', message: 'Hola que tal, y eso y tal y cual y pascual ahi queda eso'})
+
+  const handleSend = () => {
+    console.log('Send')
+    postFormContact(state).then(r => console.log(r)).catch(e => console.error(e))
+  }
     return (
         <div style={{color: 'white', }}>
             <div className="background">
@@ -44,7 +54,7 @@ export const ContactForm = ({set}) => {
             </div>
             <div className="app-form-group buttons">
               <button onClick={set} className="app-form-button">CANCEL</button>
-              <button className="app-form-button">SEND</button>
+              <button onClick={handleSend} className="app-form-button">SEND</button>
             </div>
           </div>
         </div>
