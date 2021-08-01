@@ -8,6 +8,7 @@ import GlitchClip from "react-glitch-effect/core/GlitchClip";
 import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";
 import { ContactForm } from "../common/contactform/ContactForm";
 
+
 const Trail = ({ open, children }) => {
   const items = React.Children.toArray(children);
   const trail = useTrail(items.length, {
