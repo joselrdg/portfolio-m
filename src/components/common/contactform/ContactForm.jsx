@@ -6,7 +6,7 @@ export const ContactForm = ({set}) => {
     return (
         <div style={{color: 'white', }}>
             <div className="background">
-  <div className="container">
+  <div className="containerForm">
     <div className="screen">
       <div className="screen-header">
         <div className="screen-header-left">
