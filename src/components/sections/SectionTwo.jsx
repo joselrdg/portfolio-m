@@ -46,45 +46,46 @@ export const SectionTwo = () => {
       >
         <Head className="headsect" />
 
-        {/* <div className="contain-section-two"> */}
-        <div className="title titleMirror gradient-border">
-          <GlitchSquiggly>
-            <h1 className="title-text-stwo">LOOKING FOR A</h1>
-          </GlitchSquiggly>
-          <GlitchSquiggly>
-            <h1 className="title-text-stwo">WEB DEVELOPER?</h1>
-          </GlitchSquiggly>
+        <div className="contain-section-two">
           <Trail open={open}>
-            <GlitchClip onHover={true}>
-              <h3 className="bkg-text-stwo">
-                Hey, I'm José Luis Rodríguez ; )
-              </h3>
-              <h3 className="bkg-text-stwo">
-                I'm a web developer and programmer living in Madrid, España.
-              </h3>
-              <h3 className="bkg-text-stwo">
-                Do you need HTML, CSS, jQuery, React, Angular, performance,
-                animation, responsive... or just need help with UX & UI on your
-                Web or App?
-              </h3>
-            </GlitchClip>
+            <div className="title titleMirror gradient-border">
+              <GlitchSquiggly>
+                <h1 className="title-text-stwo">LOOKING FOR A</h1>
+              </GlitchSquiggly>
+              <GlitchSquiggly>
+                <h1 className="title-text-stwo">WEB DEVELOPER?</h1>
+              </GlitchSquiggly>
+              <GlitchClip>
+                <h3 className="bkg-text-stwo">
+                  Hey, I'm José Luis Rodríguez ; )
+                </h3>
+                <h3 className="bkg-text-stwo">
+                  I'm a web developer and programmer living in Madrid, España.
+                </h3>
+                <h3 className="bkg-text-stwo">
+                  Do you need HTML, CSS, jQuery, React, Angular, performance,
+                  animation, responsive... or just need help with UX & UI on
+                  your Web or App?
+                </h3>
+              </GlitchClip>
 
-            <GlitchSquiggly
-              onHover={true}
-              style={{
-                margin: open ? "180px 0px 0px 20px" : "0px 0px 0px 20px",
-              }}
-            >
-              <a onClick={() => set((open) => !open)} className="fill">
-                Let's talk.
-              </a>
-            </GlitchSquiggly>
+              <GlitchSquiggly
+                onHover={true}
+                style={{
+                  textAlign: "center",
+                  marginTop: "120px",
+                }}
+              >
+                <a onClick={() => set((open) => !open)} className="fill">
+                  Let's talk.
+                </a>
+              </GlitchSquiggly>
+            </div>
           </Trail>
           <Trail open={!open}>
-            <ContactForm set={() => set((open) => !open)}/>
+            <ContactForm set={() => set((open) => !open)} />
           </Trail>
         </div>
-        {/* </div> */}
       </ParallaxLayer>
     </>
   );
