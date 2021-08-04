@@ -57,7 +57,7 @@ function getRandomInt(min, max) {
 
 export const Head = () => {
   const refRep = useRef(0);
-  const refAnimation = useRef(0);
+  const refAnimation = useRef(1);
   const [stateSeconds, setStateSeconds] = useState({
     img: 0,
   });

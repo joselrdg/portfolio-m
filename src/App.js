@@ -1,15 +1,14 @@
 import './App.css';
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Main } from './components/Main'
-import { ScriptClient } from './scriptclient/ScriptClient';
+// import { Client } from './scriptclient/Client';
 
 
 
 function App() {
 
-  useEffect(() => {
-    ScriptClient()
-  }, [])
+  // Client()
+
 
   return (
       
