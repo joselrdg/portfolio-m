@@ -9,27 +9,24 @@ export const HandleClient = () => {
   });
 
   useEffect(() => {
-    
-  
-    
-  }, [])
+    if (
+      dataclient.geolocation !== null &&
+      dataclient.ip !== null &&
+      dataclient.ipify !== null &&
+      !ref.current.clientconenected
+    ) {
+      ref.current.clientconenected = true;
+      postClientConnected(dataclient)
+        .then((response) => {
+          // console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }    
+}, [dataclient])
 
 
-  if (
-    dataclient.geolocation !== null &&
-    dataclient.ip !== null &&
-    dataclient.ipify !== null &&
-    !ref.current.clientconenected
-  ) {
-    ref.current.clientconenected = true;
-    postClientConnected(dataclient)
-      .then((response) => {
-        // console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
 
   // console.log(dataclient);
 
