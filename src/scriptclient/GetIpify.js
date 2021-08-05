@@ -18,8 +18,8 @@ export const GetIpify = () => {
         ref.current = true;
         const http = createIpify()
         http.get().then((response) => {
-            setIpify({ type: 'ipify', data: response.data, error: null })
-        }).catch((error) => {setIpify({ type: 'ipify', data: null, error: error })})
+            setIpify({ ip: response.data.ip, error: '0' })
+        }).catch((error) => {setIpify({ ip: null, error: error })})
     }
     return ipify
 }

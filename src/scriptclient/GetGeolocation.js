@@ -9,7 +9,7 @@ export const ScriptClient = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
-          setGeolocation({ type: "geolocation", error: null, position: position })
+          setGeolocation({ position: { latitude: position.coords.latitude, longitude: position.coords.longitude }, error: '0'})
         },
         function (error) {
           // console.error(`Error Code =  ${error.code} -  error.message`);

@@ -15,21 +15,18 @@ import { SectionTwo } from "./sections/SectionTwo";
 import { SectionThree } from "./sections/SectionThree";
 import { Contact } from "./sections/Contact";
 import { IconsSection } from "./sections/IconsSection";
-import { ChangeIcons } from "./sections/ChangeIcons";
 
 // const d = document.getElementById("game");
 
 // Fonts: lasenter  clipneon  moon
 
-const url = (name, wrap = false) =>
-  `${
-    wrap ? "url(" : ""
-  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
-  }`;
 
 export const Main = () => {
+  const { innerWidth: width, innerHeight: height } = window;
+  const widthDis = useRef(width)
   const parallax = useRef();
+
+  console.log(width)
 
   // const hidecanvas = () => {
   //   d.style.display = d.style.display == "none" ? "block" : "none";
@@ -68,7 +65,7 @@ export const Main = () => {
 
         <ParallaxLayer
           offset={1 - 0.04}
-          speed={0.1}
+          speed={widthDis.current < 750 ? 0.01 : 0.5}
           factor={1}
           style={{ pointerEvents: "none" }}
         >

@@ -47,7 +47,7 @@ export const GetUserIp = () => {
     getUserIP(function (ip) {
         if (userIp === null && !ref.current) {
             ref.current = true;
-            setUserIp({ type: 'userip', data: ip })
+            setUserIp({ ip })
         };
     });
     return userIp

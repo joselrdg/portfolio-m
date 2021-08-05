@@ -2,9 +2,14 @@ import { create } from "./BaseService";
 
 const http = create()
 
+export const createClientConnected = (body) => {
+    console.log("postClientConnected")
+    return http.post(`create/client/connected`, body)
+}
+
 export const postClientConnected = (body) => {
     console.log("postClientConnected", body)
-    return http.post(`/client/connected`, body)
+    return http.post(`/client`, body)
 }
 
 export const postClientDisconnected = (body) => {
