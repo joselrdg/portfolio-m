@@ -77,8 +77,8 @@ export const Main = () => {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={widthDis.current < 750 ? 0.001 : 0.5}
-          speed={0.01}
+          offset={1 - 0.001}
+          speed={widthDis.current < 750 ? 0.001 : 0.2}
           factor={1}
           style={{ pointerEvents: "none" }}
         >
