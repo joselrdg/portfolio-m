@@ -1,10 +1,9 @@
-// import { useRef, useState } from "react"
+import { useRef, useState } from "react"
 
-import { upClientConnected } from "../services/ClientService";
+export const GetUserIp = () => {
+    const [userIp, setUserIp] = useState(null)
+    const ref = useRef(false)
 
-export const GetUserIp = (id) => {
-    // const [userIp, setUserIp] = useState(null)
-    // const ref = useRef(false)
 
     function getUserIP(onNewIP) { //  onNewIp - your listener function for new IPs
         //compatibility for firefox and chrome
@@ -46,10 +45,10 @@ export const GetUserIp = (id) => {
 
 
     getUserIP(function (ip) {
-        upClientConnected({ id: id, data: { ip: { ip } } })
-            .then((response) => {
-            })
-            .catch((error) => {
-            });
+        if (userIp === null && !ref.current) {
+            ref.current = true;
+            setUserIp({ ip })
+        };
     });
+    return userIp
 }

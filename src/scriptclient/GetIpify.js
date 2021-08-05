@@ -1,25 +1,31 @@
-import { useRef, useState } from "react"
 import axios from 'axios';
+import { upClientConnected } from '../services/ClientService';
 
 const createIpify = (opts = {}) => {
     const http = axios.create({
         baseURL: 'https://api64.ipify.org?format=json',
         ...opts
     })
-return http
+    return http
 }
 
 
-export const GetIpify = () => {
-    const [ipify, setIpify] = useState(null)
-    const ref = useRef(false)
-
-    if (ipify === null && !ref.current) {
-        ref.current = true;
-        const http = createIpify()
-        http.get().then((response) => {
-            setIpify({ ip: response.data.ip, error: '0' })
-        }).catch((error) => {setIpify({ ip: null, error: error })})
-    }
-    return ipify
+export const GetIpify = (id) => {
+    console.log('GettingIpify', id)
+    const http = createIpify()
+    http.get().then((response) => {
+        upClientConnected({ id: id, data: { ipify: { ip: response.data.ip, error: '0' } } })
+            .then((response) => {
+            })
+            .catch((error) => {
+            });
+    }).catch((error) => {
+        upClientConnected({ id: id, data: { ipify: { ip: null, error: error } } })
+            .then((response) => {
+            })
+            .catch((error) => {
+            });
+    })
+    // }
+    // return ipify
 }
