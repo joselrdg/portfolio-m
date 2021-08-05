@@ -26,8 +26,6 @@ export const Main = () => {
   const widthDis = useRef(width)
   const parallax = useRef();
 
-  console.log(width)
-
   // const hidecanvas = () => {
   //   d.style.display = d.style.display == "none" ? "block" : "none";
   // };
