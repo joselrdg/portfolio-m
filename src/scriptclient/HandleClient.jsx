@@ -6,9 +6,11 @@ import { GetUserIp } from "./GetUserIp";
 import { ScriptClient as GetGeolocation } from "./GetGeolocation";
 
 export const HandleClient = () => {
-  const [stateId, setstateId] = useState()
+  const [stateId, setstateId] = useState();
   // const dataclient = Client();
-  const refclientconenected = useRef(false)
+  const refclientconenected = useRef({
+    star: false
+  });
 
   const geolocation = GetGeolocation();
   const ip = GetUserIp();
@@ -16,16 +18,33 @@ export const HandleClient = () => {
   const startdate = new Date();
 
   useEffect(() => {
-    if (ip != null && ipify != null && geolocation != null && !refclientconenected.current) {
-      refclientconenected.current = true;
-      postClientConnected({ startdate, geolocation, ip, ipify})
+    if (!refclientconenected.current.start) {
+      postClientConnected({ startdate: new Date() })
       .then((response) => {
-        setstateId(response.data.id);
+        refclientconenected.current.star = true;
+        const id = response.data.id
+        setstateId(id);
       })
       .catch((error) => {
         // console.log(error);
       });
-    }
-  }, [startdate, geolocation, ip, ipify])
 
+      if (ipify !== null){
+        // updapteClientConnected()
+      }
+
+      // if (ip != null && ipify != null && geolocation != null) {
+      //   console.log("use effect todos pasaron", geolocation, ip, ipify);
+      //   refclientconenected.current = true;
+      //   postClientConnected({ startdate, geolocation, ip, ipify })
+      //     .then((response) => {
+      //       setstateId(response.data.id);
+      //     })
+      //     .catch((error) => {
+      //       // console.log(error);
+      //     });
+      // }
+    }
+
+  }, [ipify]);
 };
