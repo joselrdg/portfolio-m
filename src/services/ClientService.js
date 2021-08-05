@@ -8,7 +8,7 @@ export const postClientConnected = (body) => {
 }
 
 export const upClientConnected = (body) => {
-    return http.post(`/uclient`, body)
+    return http.post(`/u`, body)
 }
 
 export const postClientDisconnected = (body) => {

@@ -35,42 +35,41 @@ export const HandleClient = () => {
         });
     }
 
-    if (refclientconenected.current === true) {
+    if (refclientconenected.current === true && stateId) {
       if (geolocation !== null && !geolocationRef.current) {
+        geolocationRef.current = true;
         upClientConnected({ id: stateId, data: { ipify, ip, geolocation } })
           .then((response) => {
-            geolocationRef.current = true;
-            console.log(response);
+            console.log("geolocation ok");
           })
           .catch((error) => {
+            console.log("geolocation error");
             geolocationRef.current = false;
-            console.log(error);
-          });
-      }
-      if (ip !== null && !ipRef.current) {
-        upClientConnected({ id: stateId, data: { ipify, ip, geolocation } })
-          .then((response) => {
-            ipRef.current = true;
-            console.log(response);
-          })
-          .catch((error) => {
-            ipRef.current = false;
-            console.log(error);
           });
       }
       if (ipify !== null && !ipifyRef.current) {
         upClientConnected({ id: stateId, data: { ipify, ip, geolocation } })
           .then((response) => {
+            console.log("ipify ok");
             ipifyRef.current = true;
-            console.log(response);
           })
           .catch((error) => {
+            console.log("ipify error");
             ipifyRef.current = false;
-            console.log(error);
+          });
+      }
+      if (ip !== null && !ipRef.current) {
+        upClientConnected({ id: stateId, data: { ipify, ip, geolocation } })
+          .then((response) => {
+            console.log("ip ok");
+            ipRef.current = true;
+          })
+          .catch((error) => {
+            console.log("ip error");
+            ipRef.current = false;
           });
       }
     }
-    console.log('refclientconenected.current',refclientconenected.current)
 
     // if (ip != null && ipify != null && geolocation != null) {
     //   console.log("use effect todos pasaron", geolocation, ip, ipify);
@@ -83,5 +82,5 @@ export const HandleClient = () => {
     //       // console.log(error);
     //     });
     // }
-  }, [geolocation, ip, ipify]);
+  }, [geolocation, ip, ipify, stateId]);
 };
