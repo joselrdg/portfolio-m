@@ -16,7 +16,9 @@ export const HandleClient = () => {
   const startdate = new Date();
 
   useEffect(() => {
+     console.log('use effect', geolocation, ip, ipify);
     if (ip != null && ipify != null && geolocation != null && !refclientconenected.current) {
+     console.log('use effect todos pasaron', geolocation, ip, ipify);
       refclientconenected.current = true;
       postClientConnected({ startdate, geolocation, ip, ipify})
       .then((response) => {
