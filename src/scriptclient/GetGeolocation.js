@@ -1,6 +1,6 @@
 import { useRef, useState } from "react"
 
-export const ScriptClient = () => {
+export const ScriptClient = (id) => {
   const [geolocation, setGeolocation] = useState(null)
   const ref = useRef(false)
 
