@@ -13,7 +13,7 @@ function App() {
 //     e.returnValue = '';
 //  }
 
-// HandleClient()
+HandleClient()
 
 // useEffect(() => {
 //   window.addEventListener("beforeunload", onUnload);
