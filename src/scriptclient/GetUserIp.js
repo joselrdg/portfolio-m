@@ -46,15 +46,11 @@ export const GetUserIp = (id) => {
 
 
     getUserIP(function (ip) {
-        const element = []
-        for (let index = 0; index < ip.length; index++) {
-            element.push(ip[index]);
-    }
-
-        upIClientConnected({ id: id, data: element})
+        upIClientConnected({ id: id, data: { ip: { ip } } })
             .then((response) => {
+                return { id: id, data: { ip: { ip } } }
             })
             .catch((error) => {
             });
-});
+    });
 }
