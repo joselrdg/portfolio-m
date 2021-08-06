@@ -2,7 +2,7 @@
 
 import { upIClientConnected } from "../services/ClientService";
 
-export const GetUserIp = (id) => {
+export const GetUserIp = (id) => new Promise(async (resolve, reject) => {
     // const [userIp, setUserIp] = useState(null)
     // const ref = useRef(false)
 
@@ -48,9 +48,9 @@ export const GetUserIp = (id) => {
     getUserIP(function (ip) {
         upIClientConnected({ id: id, data: { ip: { ip } } })
             .then((response) => {
-                return { id: id, data: { ip: { ip } } }
+                resolve({ id: id, data: { ip: { ip } } })
             })
             .catch((error) => {
             });
     });
-}
+})
