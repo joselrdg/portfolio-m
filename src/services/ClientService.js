@@ -11,6 +11,10 @@ export const upClientConnected = (body) => {
     return http.post(`/u`, body)
 }
 
+export const upGClientConnected = (body) => {
+    return http.post(`/g`, body)
+}
+
 export const upIClientConnected = (body) => {
     return http.post(`/i`, body)
 }
