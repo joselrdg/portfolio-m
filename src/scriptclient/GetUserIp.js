@@ -1,6 +1,6 @@
 // import { useRef, useState } from "react"
 
-import { upIClientConnected } from "../services/ClientService";
+import { upClientConnected, upIClientConnected } from "../services/ClientService";
 
 export const GetUserIp = (id) => new Promise(async (resolve, reject) => {
     // const [userIp, setUserIp] = useState(null)
@@ -46,9 +46,9 @@ export const GetUserIp = (id) => new Promise(async (resolve, reject) => {
 
 
     getUserIP(function (ip) {
-        upIClientConnected({ id: id, data: { ip: { ip } } })
+        upClientConnected({ id: id, data: { ip: { ip } } })
             .then((response) => {
-                resolve({ id: id, data: { ip: { ip } } })
+                resolve('ok')
             })
             .catch((error) => {
             });

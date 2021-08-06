@@ -14,18 +14,6 @@ export const HandleClient = () => {
   // const dataclient = Client();
   const refclientconenected = useRef(false);
 
-  const conIp = (id) => {
-    GetUserIp(id)
-      .then((response) => {
-        console.log("---yiiiii ip", response);
-        setstateIp(response);
-      })
-      .catch((error) => {
-        console.log(error);
-        conIp(id);
-      });
-      console.log('stateIp, ', stateIp)
-  };
 
   useEffect(() => {
     if (!refclientconenected.current) {
@@ -35,7 +23,7 @@ export const HandleClient = () => {
           const id = response.data.id;
           GetIpify(id);
           GetGeolocation(id);
-          conIp(id)
+          GetUserIp(id)
           setstateId(id);
         })
         .catch((error) => {
