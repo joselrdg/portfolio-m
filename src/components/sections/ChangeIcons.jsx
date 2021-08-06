@@ -1,4 +1,3 @@
-import { ParallaxLayer } from "@react-spring/parallax";
 import React from "react";
 import { IconsSection } from "./IconsSection";
 

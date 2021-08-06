@@ -1,9 +1,9 @@
 import { ParallaxLayer } from "@react-spring/parallax";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./SectionThree.css";
 import GlitchSquiggly from "react-glitch-effect/core/GlitchSquiggly";
 import { CardPhoto } from "../common/cardpage/CardPhoto";
-import { ChangeIcons } from "./ChangeIcons";
+// import { ChangeIcons } from "./ChangeIcons";
 
 // const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 

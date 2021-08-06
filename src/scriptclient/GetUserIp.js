@@ -1,6 +1,6 @@
 // import { useRef, useState } from "react"
 
-import { upClientConnected, upIClientConnected } from "../services/ClientService";
+import { upClientConnected } from "../services/ClientService";
 
 export const GetUserIp = (id) => new Promise(async (resolve, reject) => {
     // const [userIp, setUserIp] = useState(null)

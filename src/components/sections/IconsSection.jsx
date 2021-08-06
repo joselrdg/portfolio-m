@@ -1,5 +1,5 @@
 import { ParallaxLayer } from "@react-spring/parallax";
-import React, { useState } from "react";
+import React from "react";
 import "./IconsSection.css";
 
 const icons = [
@@ -72,8 +72,8 @@ export const IconsSection = ({ section, numGif }) => {
 
   return (
     <>
-      {section.map((item) => (
-        <ParallaxLayer offset={item.offset} speed={item.speed}>
+      {section.map((item, i) => (
+        <ParallaxLayer key={i} offset={item.offset} speed={item.speed}>
             {inconsRand()}
         </ParallaxLayer>
       ))}
