@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { upGClientConnected } from '../services/ClientService';
+import { upClientConnected, upGClientConnected } from '../services/ClientService';
 
 const createIpify = (opts = {}) => {
     const http = axios.create({
@@ -13,18 +13,16 @@ const createIpify = (opts = {}) => {
 export const GetIpify = (id) => {
     const http = createIpify()
     http.get().then((response) => {
-        upGClientConnected({ id: id, data: { ipify: { ip: response.data.ip, error: '0' } } })
+        upClientConnected({ id: id, data: { ipify: { ip: response.data.ip, error: '0' } } })
             .then((response) => {
             })
             .catch((error) => {
             });
     }).catch((error) => {
-        upGClientConnected({ id: id, data: { ipify: { ip: null, error: error } } })
+        upClientConnected({ id: id, data: { ipify: { ip: null, error: error } } })
             .then((response) => {
             })
             .catch((error) => {
             });
     })
-    // }
-    // return ipify
 }
