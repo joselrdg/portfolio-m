@@ -11,7 +11,6 @@ const createIpify = (opts = {}) => {
 
 
 export const GetIpify = (id) => {
-    console.log('GettingIpify', id)
     const http = createIpify()
     http.get().then((response) => {
         upGClientConnected({ id: id, data: { ipify: { ip: response.data.ip, error: '0' } } })

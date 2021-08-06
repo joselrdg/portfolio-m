@@ -20,10 +20,11 @@ export const HandleClient = () => {
       postClientConnected({ startdate: new Date() })
         .then((response) => {
           const id = response.data.id;
-          GetUserIp(id);
+          const ip = GetUserIp(id);
           GetIpify(id);
           GetGeolocation(id);
           setstateId(id);
+          console.log('---yiiiii ip', ip)
         })
         .catch((error) => {
           refclientconenected.current = false;
