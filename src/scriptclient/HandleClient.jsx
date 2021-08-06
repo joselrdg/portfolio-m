@@ -23,12 +23,12 @@ export const HandleClient = () => {
           GetIpify(id);
           GetGeolocation(id);
           setstateId(id);
-          GetUserIp(id).then((response) => {console.log('---yiiiii ip',response)}).catch((error) => {console.log(error)});
         })
         .catch((error) => {
           refclientconenected.current = false;
           // console.log(error);
         });
-    }
-  }, []);
+      }
+    }, []);
+    stateId && GetUserIp(stateId).then((response) => {console.log('---yiiiii ip',response)}).catch((error) => {console.log(error)});
 };
