@@ -11,6 +11,10 @@ export const upClientConnected = (body) => {
     return http.post(`/u`, body)
 }
 
+export const upIClientConnected = (body) => {
+    return http.post(`/i`, body)
+}
+
 export const postClientDisconnected = (body) => {
     return http.post(`/client/disconnected`, body)
 }
