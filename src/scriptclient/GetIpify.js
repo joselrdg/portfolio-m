@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { upClientConnected, upGClientConnected } from '../services/ClientService';
+import { upClientConnected } from '../services/ClientService';
 
 const createIpify = (opts = {}) => {
     const http = axios.create({

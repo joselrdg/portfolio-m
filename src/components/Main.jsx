@@ -22,7 +22,7 @@ import { IconsSection } from "./sections/IconsSection";
 
 
 export const Main = () => {
-  const { innerWidth: width, innerHeight: height } = window;
+  const { innerWidth: width } = window;
   const widthDis = useRef(width)
   const parallax = useRef();
 
