@@ -1,7 +1,8 @@
 import './App.css';
-import React, { Suspense } from "react";
-import { Main } from './components/Main'
+import React from "react";
+// import { Main } from './components/Main'
 import { HandleClient } from './scriptclient/HandleClient';
+import { AppRouter } from './routers/AppRouter';
 
 
 
@@ -25,9 +26,10 @@ function App() {
   return (
 
     <div>
-      <Suspense fallback={<h1>Loading SectionOne...</h1>}>
+      <AppRouter />
+      {/* <Suspense fallback={<h1>Loading SectionOne...</h1>}>
         <Main />
-      </Suspense>
+      </Suspense> */}
     </div>
   );
 }
