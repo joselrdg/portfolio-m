@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { login } from "../../services/authservice/AuthService";
+import { login } from "../../services/admservice/AuthService";
 import { setAccessToken } from "../../stores/AccessTokenStore";
 import { useUser } from "../../components/hooks/useUser";
 import './LoginScreen.css'
@@ -66,8 +66,8 @@ export const LoginScreen = () => {
         setAccessToken(response.access_token);
         doLogin().then(() => {
           push("/adm/dashboard");
-        }).catch((error) =>console.log(error));
-      }).catch((error) => console.log('eeeeeeeeeeeerror'));
+        })
+      }).catch((error) => console.log(error));
     }
   };
 

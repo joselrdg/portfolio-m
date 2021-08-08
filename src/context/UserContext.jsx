@@ -1,6 +1,6 @@
 
 import { createContext, useEffect, useState } from "react";
-import { getUserInfo } from "../services/authservice/UserService";
+import { getUserInfo } from "../services/admservice/UserService";
 import { getAccessToken } from "../stores/AccessTokenStore";
 
 export const UserContext = createContext();
