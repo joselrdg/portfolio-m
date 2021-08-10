@@ -1,7 +1,9 @@
 import "./Main.css";
 import React, {
+  useEffect,
   // useCallback,
   useRef,
+  useState,
 } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 // import { useSpring, animated as a, interpolate } from "react-spring";
@@ -21,11 +23,21 @@ import { IconsSection } from "./sections/IconsSection";
 // Fonts: lasenter  clipneon  moon
 
 
-export const Main = () => {
+function Main() {
   const { innerWidth: width } = window;
   const widthDis = useRef(width)
   const parallax = useRef();
+  const [loading, setLoading] = useState(false)
 
+  
+  
+  useEffect(() => {
+    setLoading(true)
+  }, [])
+  
+  if (!loading) {
+    return <p style={{color: "red" }}>loading...</p>;
+  }
   // const hidecanvas = () => {
   //   d.style.display = d.style.display == "none" ? "block" : "none";
   // };
@@ -135,3 +147,5 @@ export const Main = () => {
     </div>
   );
 };
+
+export default Main

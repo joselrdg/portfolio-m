@@ -1,9 +1,10 @@
 import './App.css';
-import React from "react";
+import React, { Suspense } from "react";
 // import { Main } from './components/Main'
 import { HandleClient } from './scriptclient/HandleClient';
-import { AppRouter } from './routers/AppRouter';
+import { Loading } from './components/common/loading/Loading';
 
+const Main = React.lazy(() => import("./components/Main"));
 
 
 
@@ -23,14 +24,13 @@ function App() {
   //   }
   // }, [])
 
+
   return (
 
-    <div>
-      <AppRouter />
-      {/* <Suspense fallback={<h1>Loading SectionOne...</h1>}>
-        <Main />
-      </Suspense> */}
-    </div>
+    <Suspense fallback={<Loading />}>
+      <Main />
+    </Suspense>
+
   );
 }
 

@@ -1,15 +1,17 @@
-
 import { createContext, useEffect, useState } from "react";
 import { getUserInfo } from "../services/admservice/UserService";
 import { getAccessToken } from "../stores/AccessTokenStore";
 
 export const UserContext = createContext();
 
-export function UserContextProvider({ children }) {
+export function UserContextProvider({children}) {
   const [user, setUser] = useState(null);
 
   const doLogin = () => {
-    return getUserInfo().then((response) => {setUser(response); return response});
+    return getUserInfo().then((response) => {
+      setUser(response);
+      return response;
+    });
   };
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export function UserContextProvider({ children }) {
 
   const value = {
     doLogin,
-    user, 
+    user,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }

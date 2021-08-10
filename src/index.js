@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { UserContextProvider } from "./context/UserContext";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AppRouter } from './routers/AppRouter';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserContextProvider>
-      <App />
-    </UserContextProvider>
+      {/* <App /> */}
+      <AppRouter />
   </React.StrictMode>,
   document.getElementById('root')
 );
