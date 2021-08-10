@@ -19,8 +19,8 @@ export const HandleClient = () => {
       refclientconenected.current = true;
       postClientConnected({ startdate: new Date(), screen: { width, height } })
       .then((response) => {
-        // const id = response.id;
-          // GetIpify(id);
+        const id = response.id;
+          GetIpify(id);
           // GetGeolocation(id);
           // GetUserIp(id);
           // setstateId(id);
