@@ -20,9 +20,10 @@ export const DashboardScreen = () => {
   const condate = (e) => {
     const d = new Date(e);
     return (
-      <td>
-        {d.toLocaleDateString()} - {d.toLocaleTimeString()}
-      </td>
+      <>
+        <td>{d.toLocaleDateString()}</td>
+        <td>{d.toLocaleTimeString()}</td>
+      </>
     );
   };
 
@@ -50,10 +51,12 @@ export const DashboardScreen = () => {
         <thead>
           <tr>
             <th>Date</th>
-            <th>Ipify</th>
+            <th>Time</th>
             <th>Ip</th>
-            <th>Screen</th>
-            <th>Geolocation</th>
+            <th>Scr: W/H</th>
+            <th>City</th>
+            <th>Region</th>
+            <th>Country</th>
           </tr>
         </thead>
         <tbody>
@@ -61,13 +64,13 @@ export const DashboardScreen = () => {
             return (
               <tr key={e.id}>
                 {e.startdate && condate(e.startdate)}
-                <td>{e.ipify && e.ipify.ip}</td>
-                <td>{e.ip && e.ip.ip}</td>
+                <td>{e.ipapi && e.ipapi.ip}</td>
                 <td>
-                  W: {e.screen && e.screen.width} / H:{" "}
-                  {e.screen && e.screen.height}
+                  {e.screen && e.screen.width} / {e.screen && e.screen.height}
                 </td>
-                {e.geolocation && error(e.geolocation)}
+                <td>{e.ipapi && e.ipapi.city}</td>
+                <td>{e.ipapi && e.ipapi.region}</td>
+                <td>{e.ipapi && e.ipapi.country_name}</td>
               </tr>
             );
           })}
