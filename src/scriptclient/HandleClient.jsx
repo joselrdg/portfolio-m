@@ -21,8 +21,8 @@ export const HandleClient = () => {
       .then((response) => {
         const id = response.id;
           GetIpify(id);
-          GetGeolocation(id);
-          GetUserIp(id);
+          // GetGeolocation(id);
+          // GetUserIp(id);
           // setstateId(id);
         })
         .catch((error) => {
