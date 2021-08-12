@@ -20,37 +20,40 @@ const icons = [
     link: "mailto:josesietepicos@gmail.com",
   },
 ];
-export const Contact = () => {
+
+function Contact() {
   return (
     <>
- 
-    <ParallaxLayer
-      offset={4}
-      speed={1}
-      style={{
-        display: "flex",
-        // flexDirection: "row",
-        flexWrap: "wrap",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundImage: 'url(bs.gif)',
-        backgroundPosition: "center 0%",
-        backgroundSize: "cover",
-      }}
-    >
-      <div  style={{
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        justifyContent: "center",
-        marginBottom: "200px"
-      }}>
-      {icons.map((icon, i) => (
-        <BorderIcon key={i} icon={icon.icon} link={icon.link}/>
-      ))}
-
-      </div>
-    </ParallaxLayer>
+      <ParallaxLayer
+        offset={4}
+        speed={1}
+        style={{
+          display: "flex",
+          // flexDirection: "row",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundImage: "url(bs.gif)",
+          backgroundPosition: "center 0%",
+          backgroundSize: "cover",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "200px",
+          }}
+        >
+          {icons.map((icon, i) => (
+            <BorderIcon key={i} icon={icon.icon} link={icon.link} />
+          ))}
+        </div>
+      </ParallaxLayer>
     </>
   );
-};
+}
+
+export default Contact;

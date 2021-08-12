@@ -8,7 +8,7 @@ import { CardPhoto } from "../common/cardpage/CardPhoto";
 // const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 
 
-export const SectionThree = () => {
+  function SectionThree () {
   return (
     <>
       <ParallaxLayer
@@ -48,3 +48,6 @@ export const SectionThree = () => {
     </>
   );
 };
+
+
+export default SectionThree;
