@@ -14,7 +14,7 @@ const icons = [
 ];
 
 const urlGif = [
-  "https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif",
+  // "https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif",
   "https://i.gifer.com/7Gt8.gif",
   "https://i.gifer.com/7tD0.gif",
   "https://i.gifer.com/81O8.gif",
@@ -29,7 +29,8 @@ function randomInt(min, max) {
 
 
 
-export const IconsSection = ({ section, numGif }) => {
+  function IconsSection ({ section, numGif }) {
+
 
   const inconsRand = () => {
     const items = icons.map((e, i) => {
@@ -80,3 +81,5 @@ export const IconsSection = ({ section, numGif }) => {
     </>
   );
 };
+
+export default IconsSection;

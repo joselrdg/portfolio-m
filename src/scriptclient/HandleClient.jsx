@@ -14,7 +14,6 @@ export const HandleClient = () => {
   const accessToken = getAccessToken() ? true : false;
 
   useEffect(() => {
-    console.log(accessToken)
     if (!accessToken && !refclientconenected.current) {
       refclientconenected.current = true;
       postClientConnected({ startdate: new Date(), screen: { width, height } })

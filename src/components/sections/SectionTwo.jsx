@@ -29,7 +29,7 @@ const Trail = ({ open, children }) => {
   );
 };
 
-export const SectionTwo = () => {
+  function SectionTwo () {
   const [open, set] = useState(true);
   return (
     <>
@@ -50,7 +50,7 @@ export const SectionTwo = () => {
         <div className="contain-section-two">
           <Trail open={open}>
             <div className="title titleMirror gradient-border">
-              <GlitchSquiggly>
+            <GlitchSquiggly>
                 <h1 className="title-text-stwo">LOOKING FOR A</h1>
               </GlitchSquiggly>
               <GlitchSquiggly>
@@ -81,6 +81,7 @@ export const SectionTwo = () => {
                   Let's talk.
                 </a>
               </GlitchSquiggly>
+                
             </div>
           </Trail>
           <Trail open={!open}>
@@ -91,3 +92,6 @@ export const SectionTwo = () => {
     </>
   );
 };
+
+export default SectionTwo;
+
